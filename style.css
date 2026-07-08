@@ -27,18 +27,9 @@ overflow-x:hidden;
 
 /* Navbar */
 
-.navbar{
-    position:fixed;
-    top:0;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 8%;
-    background:rgba(5,8,22,.75);
-    backdrop-filter:blur(12px);
-    z-index:1000;
-}
+backdrop-filter:blur(18px);
+background:rgba(8,12,30,.55);
+border-bottom:1px solid rgba(255,255,255,.08);
 
 .logo{
     font-size:30px;
