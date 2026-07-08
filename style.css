@@ -536,8 +536,48 @@ box-shadow:0 0 25px #4f8cff;
 
 @media(max-width:992px){
 
+@media (max-width:992px){
+
 .about-container{
-grid-template-columns:1fr;
+    grid-template-columns:1fr;
+    gap:40px;
+}
+
+.about-right{
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.hero-content{
+    grid-template-columns:1fr;
+    text-align:center;
+    gap:50px;
+}
+
+.hero-image{
+    order:-1;
+}
+
+.hero-stats{
+    justify-content:center;
+}
+
+}
+
+@media (max-width:576px){
+
+.about-right{
+    grid-template-columns:1fr;
+}
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero-image img{
+    width:260px;
+}
+
 }
 
 .about-right{
