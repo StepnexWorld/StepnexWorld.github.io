@@ -1037,8 +1037,10 @@ Featured Project
 
 
 .featured-content h2{
-    font-size:38px;
+    font-size:46px;
+    line-height:1.15;
     margin-bottom:20px;
+    font-weight:700;
 }
 
 .featured-content p{
