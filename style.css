@@ -617,3 +617,133 @@ width:0;
 }
 
 }
+/* ==========================================
+   PART 4
+   EXPERIENCE + TESTIMONIALS
+==========================================*/
+
+/* ===============================
+Experience
+================================ */
+
+.experience{
+    padding:80px 8%;
+}
+
+.timeline{
+    max-width:900px;
+    margin:60px auto 0;
+    position:relative;
+    border-left:3px solid #4f8cff;
+    padding-left:40px;
+}
+
+.timeline-item{
+    position:relative;
+    margin-bottom:45px;
+}
+
+.timeline-dot{
+    position:absolute;
+    left:-51px;
+    top:5px;
+    width:20px;
+    height:20px;
+    background:#4f8cff;
+    border-radius:50%;
+    box-shadow:0 0 20px rgba(79,140,255,.5);
+}
+
+.timeline-content{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:28px;
+    transition:.35s;
+}
+
+.timeline-content:hover{
+    transform:translateX(8px);
+    border-color:#4f8cff;
+    box-shadow:0 15px 35px rgba(79,140,255,.25);
+}
+
+.timeline-content span{
+    color:#4f8cff;
+    font-weight:700;
+}
+
+.timeline-content h3{
+    margin:12px 0;
+    font-size:24px;
+}
+
+.timeline-content p{
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+/* ===============================
+Testimonials
+================================ */
+
+.testimonials{
+    padding:80px 8%;
+}
+
+.testimonial-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.testimonial-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    padding:35px;
+    transition:.35s;
+}
+
+.testimonial-card:hover{
+    transform:translateY(-10px);
+    border-color:#4f8cff;
+    box-shadow:0 15px 35px rgba(79,140,255,.25);
+}
+
+.stars{
+    color:#FFD700;
+    font-size:20px;
+    margin-bottom:18px;
+}
+
+.testimonial-card p{
+    color:#cbd5e1;
+    line-height:1.9;
+    margin-bottom:25px;
+}
+
+.client{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.client img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #4f8cff;
+}
+
+.client h4{
+    font-size:18px;
+}
+
+.client span{
+    color:#9ca3af;
+    font-size:14px;
+}
