@@ -557,3 +557,10 @@ font-size:32px;
 }
 
 }
+#typing{
+    color:#4f8cff;
+    font-size:32px;
+    font-weight:700;
+    min-height:40px;
+    display:block;
+}
