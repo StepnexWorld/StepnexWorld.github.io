@@ -1101,7 +1101,24 @@ isolation:isolate;
     border-color:#4f8cff;
     box-shadow:0 20px 60px rgba(79,140,255,.25);
 }
+.featured-project::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        135deg,
+        rgba(79,140,255,.08),
+        transparent 45%,
+        rgba(0,212,255,.06)
+    );
+    opacity:0;
+    transition:.4s;
+    z-index:-1;
+}
 
+.featured-project:hover::before{
+    opacity:1;
+}
 .featured-image{
     overflow:hidden;
 }
