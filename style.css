@@ -456,3 +456,8 @@ box-shadow:0 0 25px #4f8cff;
     transform:translate(-50%,-50%);
     z-index:0;
 }
+.btn1:hover,
+.btn2:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 25px rgba(79,140,255,.5);
+}
