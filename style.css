@@ -1090,6 +1090,8 @@ Featured Project
     border:1px solid rgba(255,255,255,.08);
     border-radius:28px;
     overflow:hidden;
+   position:relative;
+isolation:isolate;
     backdrop-filter:blur(20px);
     transition:.4s;
 }
