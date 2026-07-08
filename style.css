@@ -476,3 +476,144 @@ Services
     line-height:1.8;
 
 }
+/* ==========================================
+   PART 3
+   PORTFOLIO + SKILLS
+==========================================*/
+
+/* ===============================
+Portfolio
+================================ */
+
+.portfolio{
+    padding:80px 8%;
+}
+
+.portfolio-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.portfolio-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    overflow:hidden;
+    transition:.35s;
+}
+
+.portfolio-card:hover{
+    transform:translateY(-12px);
+    border-color:#4f8cff;
+    box-shadow:0 20px 40px rgba(79,140,255,.25);
+}
+
+.portfolio-image{
+    overflow:hidden;
+}
+
+.portfolio-image img{
+    width:100%;
+    display:block;
+    transition:.5s;
+}
+
+.portfolio-card:hover img{
+    transform:scale(1.08);
+}
+
+.portfolio-content{
+    padding:28px;
+}
+
+.project-tag{
+    display:inline-block;
+    background:#4f8cff;
+    color:#fff;
+    font-size:13px;
+    padding:6px 14px;
+    border-radius:30px;
+    margin-bottom:15px;
+}
+
+.portfolio-content h3{
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.portfolio-content p{
+    color:#cbd5e1;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.portfolio-btn{
+    display:inline-block;
+    padding:13px 28px;
+    background:#4f8cff;
+    color:#fff;
+    text-decoration:none;
+    border-radius:40px;
+    transition:.35s;
+    font-weight:600;
+}
+
+.portfolio-btn:hover{
+    background:#2563eb;
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px rgba(79,140,255,.35);
+}
+
+/* ===============================
+Skills
+================================ */
+
+.skills{
+    padding:80px 8%;
+}
+
+.skills-container{
+    max-width:900px;
+    margin:60px auto 0;
+}
+
+.skill{
+    margin-bottom:30px;
+}
+
+.skill-title{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:12px;
+    font-weight:600;
+}
+
+.skill-title span:last-child{
+    color:#4f8cff;
+}
+
+.skill-bar{
+    width:100%;
+    height:12px;
+    background:#1b233a;
+    border-radius:50px;
+    overflow:hidden;
+}
+
+.skill-fill{
+    height:100%;
+    border-radius:50px;
+    background:linear-gradient(90deg,#4f8cff,#60a5fa);
+    animation:fillBar 2s ease;
+}
+
+@keyframes fillBar{
+
+from{
+width:0;
+}
+
+}
