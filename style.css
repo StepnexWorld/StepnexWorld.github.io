@@ -747,3 +747,132 @@ Testimonials
     color:#9ca3af;
     font-size:14px;
 }
+/* ==========================================
+   PART 5
+   CONTACT + FOOTER
+==========================================*/
+
+/* ===============================
+Contact
+================================ */
+
+.contact{
+    padding:80px 8%;
+}
+
+.contact-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:start;
+}
+
+.contact-info h3{
+    font-size:34px;
+    margin-bottom:20px;
+}
+
+.contact-info p{
+    color:#cbd5e1;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.contact-item i{
+    width:55px;
+    height:55px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#4f8cff;
+    border-radius:50%;
+    font-size:20px;
+}
+
+.contact-item span,
+.contact-item a{
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.contact-item a:hover{
+    color:#4f8cff;
+}
+
+/* ===============================
+Form
+================================ */
+
+.contact-form{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:35px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:16px;
+    margin-bottom:18px;
+    background:#101827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:12px;
+    color:#fff;
+    outline:none;
+    transition:.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:#4f8cff;
+}
+
+.contact-form textarea{
+    resize:none;
+    height:160px;
+}
+
+.contact-form button{
+    width:100%;
+    padding:16px;
+    background:#4f8cff;
+    border:none;
+    color:#fff;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:17px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.contact-form button:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(79,140,255,.35);
+}
+
+/* ===============================
+Footer
+================================ */
+
+.footer{
+    padding:35px 8%;
+    border-top:1px solid rgba(255,255,255,.08);
+    text-align:center;
+    color:#94a3b8;
+    margin-top:50px;
+}
+
+.footer span{
+    color:#4f8cff;
+}
