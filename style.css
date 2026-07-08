@@ -1052,10 +1052,24 @@ Featured Project
 
 
 .project-tags span{
-    background:#111827;
-    padding:8px 16px;
-    border-radius:30px;
-    font-size:14px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 18px;
+    background:rgba(79,140,255,.08);
+    border:1px solid rgba(79,140,255,.25);
+    border-radius:50px;
+    color:#dbeafe;
+    font-size:13px;
+    font-weight:600;
+    transition:.35s ease;
+}
+
+.project-tags span:hover{
+    background:#4f8cff;
+    color:#fff;
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(79,140,255,.35);
 }
 
 /* =========================================
