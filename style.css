@@ -254,7 +254,7 @@ About Section
 ========================== */
 
 .about{
-    padding:100px 8%;
+    padding:80px 8%;
 }
 
 .about-container{
@@ -425,7 +425,7 @@ Services
 ========================== */
 
 .services{
-    padding:100px 8%;
+    padding:80px 8%;
 }
 
 .section-title{
@@ -508,7 +508,7 @@ Portfolio
 ========================== */
 
 .portfolio{
-    padding:100px 8%;
+    padding:80px 8%;
 }
 
 .portfolio-grid{
@@ -589,7 +589,7 @@ Skills
 ========================== */
 
 .skills{
-    padding:100px 8%;
+    padding:80px 8%;
 }
 
 .skills-container{
@@ -626,7 +626,7 @@ Testimonials
 ========================== */
 
 .testimonials{
-    padding:100px 8%;
+    padding:80px 8%;
 }
 
 .testimonial-grid{
@@ -681,7 +681,7 @@ Contact
 ========================== */
 
 .contact{
-    padding:100px 8%;
+    padding:80px 8%;
 }
 
 .contact-grid{
