@@ -799,3 +799,21 @@ grid-template-columns:1fr;
 }
 
 }
+.project-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 28px;
+    background:#4f8cff;
+    color:#fff;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:0.3s ease;
+}
+
+.project-btn:hover{
+    background:#3b82f6;
+    transform:translateY(-5px);
+    box-shadow:0 10px 30px rgba(79,140,255,.35);
+}
