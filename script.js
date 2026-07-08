@@ -92,3 +92,24 @@ glow.style.left=e.clientX+"px";
 glow.style.top=e.clientY+"px";
 
 });
+const testimonials = document.querySelectorAll(".testimonial-card");
+
+let testimonialIndex = 0;
+
+function showTestimonial(){
+
+    testimonials.forEach(card=>{
+        card.classList.remove("active");
+    });
+
+    testimonials[testimonialIndex].classList.add("active");
+
+    testimonialIndex++;
+
+    if(testimonialIndex >= testimonials.length){
+        testimonialIndex = 0;
+    }
+
+}
+
+setInterval(showTestimonial,5000);
