@@ -861,3 +861,60 @@ Skills Section
         width:0;
     }
 }
+/* ==========================
+Experience Timeline
+========================== */
+
+.experience{
+    padding:70px 8%;
+}
+
+.timeline{
+    max-width:900px;
+    margin:60px auto 0;
+    border-left:3px solid #4f8cff;
+    padding-left:30px;
+}
+
+.timeline-item{
+    position:relative;
+    margin-bottom:40px;
+}
+
+.timeline-dot{
+    position:absolute;
+    left:-41px;
+    top:5px;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#4f8cff;
+    box-shadow:0 0 20px rgba(79,140,255,.6);
+}
+
+.timeline-content{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:15px;
+    padding:25px;
+    transition:.3s;
+}
+
+.timeline-content:hover{
+    transform:translateX(8px);
+    border-color:#4f8cff;
+}
+
+.timeline-content span{
+    color:#4f8cff;
+    font-weight:700;
+}
+
+.timeline-content h3{
+    margin:10px 0;
+}
+
+.timeline-content p{
+    color:#cbd5e1;
+    line-height:1.8;
+}
