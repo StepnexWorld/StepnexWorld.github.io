@@ -410,3 +410,27 @@ transform:translateY(-8px);
 box-shadow:0 0 25px #4f8cff;
 
 }
+.hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-image img{
+    width:100%;
+    max-width:420px;
+    border-radius:30px;
+    border:3px solid rgba(79,140,255,.5);
+    box-shadow:
+        0 0 30px rgba(79,140,255,.35),
+        0 0 80px rgba(79,140,255,.15);
+    animation:floatImage 5s ease-in-out infinite;
+}
+
+@keyframes floatImage{
+
+0%{transform:translateY(0px);}
+50%{transform:translateY(-18px);}
+100%{transform:translateY(0px);}
+
+}
