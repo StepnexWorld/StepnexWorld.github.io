@@ -1229,13 +1229,20 @@ Featured Project
     display:inline-flex;
     align-items:center;
     gap:10px;
-    text-decoration:none;
-    color:#fff;
+    padding:15px 30px;
     background:linear-gradient(135deg,#4f8cff,#2563eb);
-    padding:14px 28px;
+    color:#fff;
+    text-decoration:none;
     border-radius:50px;
     font-weight:600;
-    transition:.35s;
+    font-size:15px;
+    transition:.35s ease;
+    width:max-content;
+}
+
+.portfolio-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(79,140,255,.35);
 }
 
 .portfolio-btn:hover{
