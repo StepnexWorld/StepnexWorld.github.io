@@ -13,8 +13,16 @@ html{
 }
 
 body{
-    background:#050816;
-    color:#fff;
+
+background:
+radial-gradient(circle at top left,#1b2b67 0%,transparent 35%),
+radial-gradient(circle at bottom right,#14315d 0%,transparent 35%),
+#050816;
+
+color:white;
+
+overflow-x:hidden;
+
 }
 
 /* Navbar */
