@@ -1553,3 +1553,131 @@ to{
 }
 
 }
+/*=========================================
+   CONTACT V2
+=========================================*/
+
+.contact{
+    padding:120px 8%;
+}
+
+.contact-wrapper{
+    max-width:1200px;
+    margin:60px auto 0;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.contact-info h3{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.contact-info p{
+    color:#cbd5e1;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.contact-list{
+    list-style:none;
+    padding:0;
+    margin:0 0 35px;
+}
+
+.contact-list li{
+    margin-bottom:15px;
+    color:#e2e8f0;
+    font-size:16px;
+}
+
+.contact-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.contact-links a{
+    text-decoration:none;
+    color:#fff;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(79,140,255,.20);
+    padding:14px 22px;
+    border-radius:50px;
+    transition:.35s;
+}
+
+.contact-links a:hover{
+    background:#4f8cff;
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(79,140,255,.35);
+}
+
+.contact-form{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:25px;
+    padding:40px;
+    backdrop-filter:blur(8px);
+}
+
+.contact-form form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:16px 18px;
+    border:none;
+    border-radius:12px;
+    background:#111827;
+    color:#fff;
+    font-size:15px;
+    outline:none;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:#4f8cff;
+    box-shadow:0 0 15px rgba(79,140,255,.25);
+}
+
+.contact-form button{
+    padding:16px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    background:linear-gradient(135deg,#4f8cff,#2563eb);
+    transition:.35s;
+}
+
+.contact-form button:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(79,140,255,.35);
+}
+
+@media(max-width:992px){
+
+.contact-wrapper{
+    grid-template-columns:1fr;
+}
+
+.contact-info{
+    text-align:center;
+}
+
+.contact-links{
+    justify-content:center;
+}
+
+}
