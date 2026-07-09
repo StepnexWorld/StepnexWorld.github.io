@@ -1782,3 +1782,116 @@ to{
 #topBtn:hover{
     transform:translateY(-5px);
 }
+/*=========================================
+   PORTFOLIO V3
+=========================================*/
+
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    margin-top:60px;
+}
+
+.portfolio-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    overflow:hidden;
+    transition:.4s ease;
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    backdrop-filter:blur(8px);
+}
+
+.portfolio-card:hover{
+    transform:translateY(-10px);
+    border-color:#4f8cff;
+    box-shadow:0 20px 40px rgba(79,140,255,.25);
+}
+
+.portfolio-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.portfolio-card:hover img{
+    transform:scale(1.08);
+}
+
+.portfolio-content{
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.portfolio-content h3{
+    font-size:24px;
+    margin:15px 0;
+}
+
+.portfolio-content p{
+    color:#cbd5e1;
+    line-height:1.8;
+    margin-bottom:20px;
+    flex:1;
+}
+
+.project-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.project-tags span{
+    background:rgba(79,140,255,.12);
+    color:#4f8cff;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.portfolio-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    padding:15px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#4f8cff,#2563eb);
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    transition:.35s;
+}
+
+.portfolio-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 30px rgba(79,140,255,.35);
+}
+
+@media(max-width:992px){
+
+.portfolio-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.portfolio-grid{
+    grid-template-columns:1fr;
+}
+
+.portfolio-card img{
+    height:220px;
+}
+
+}
