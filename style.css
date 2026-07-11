@@ -799,20 +799,15 @@ Hero
     display:flex;
     align-items:center;
     justify-content:center;
-
-    /* OLD */
-    /* padding:170px 8% 120px; */
-
-    /* NEW */
-    padding:120px 8% 100px;
+    padding:120px 8% 80px;
 }
 
 .hero-content{
     width:100%;
-    max-width:1250px;
+    max-width:1350px;
     display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:70px;
+    grid-template-columns:1.05fr .95fr;
+    gap:60px;
     align-items:center;
 }
 
