@@ -2210,3 +2210,18 @@ to{
 }
 
 }
+/* Navbar Scroll Effect */
+
+header.scrolled{
+
+    background:rgba(8,12,32,.92);
+
+    backdrop-filter:blur(22px);
+
+    box-shadow:0 12px 35px rgba(0,0,0,.35);
+
+    border-bottom:1px solid rgba(79,140,255,.18);
+
+    transition:.35s;
+
+}
