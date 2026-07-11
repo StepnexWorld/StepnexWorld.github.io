@@ -1973,15 +1973,18 @@ header.scrolled .logo{
         PREMIUM NAVBAR
 =========================================*/
 
-.header{
+header{
+
     position:fixed;
-    top:20px;
-    left:50%;
-    transform:translateX(-50%);
-    width:95%;
-    max-width:1400px;
-    z-index:9999;
-    transition:.4s ease;
+
+    top:15px;
+
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
 }
 
 .header.scrolled{
