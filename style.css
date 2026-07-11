@@ -2071,6 +2071,180 @@ header.scrolled .logo{
     list-style:none;
 
 }
+/*=========================================
+        NAVIGATION LINKS
+=========================================*/
 
+.nav-item{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:14px 20px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+    color:#dbe4ff;
+
+    font-size:15px;
+    font-weight:600;
+
+    transition:.35s ease;
+}
+
+.nav-item i{
+    font-size:18px;
+    transition:.35s;
+}
+
+.nav-item span{
+    transition:.35s;
+}
+
+/* Hover */
+
+.nav-item:hover{
+
+    background:rgba(79,140,255,.12);
+
+    color:#ffffff;
+
+    transform:translateY(-2px);
+
+}
+
+.nav-item:hover i{
+
+    color:#4f8cff;
+
+    transform:translateY(-2px) scale(1.1);
+
+}
+
+/* Active */
+
+.nav-item.active{
+
+    background:linear-gradient(
+        135deg,
+        rgba(79,140,255,.20),
+        rgba(79,140,255,.08)
+    );
+
+    color:#ffffff;
+
+    box-shadow:0 8px 25px rgba(79,140,255,.18);
+
+}
+
+.nav-item.active i{
+
+    color:#4f8cff;
+
+}
+
+/* underline animation */
+
+.nav-item::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:20px;
+    right:20px;
+    bottom:8px;
+
+    height:2px;
+
+    border-radius:10px;
+
+    background:#4f8cff;
+
+    transform:scaleX(0);
+
+    transition:.35s;
+
+}
+
+.nav-item:hover::after,
+.nav-item.active::after{
+
+    transform:scaleX(1);
+
+}
+
+/*=========================================
+          HIRE BUTTON
+=========================================*/
+
+.hire-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:14px 28px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-weight:600;
+
+    background:linear-gradient(
+        135deg,
+        #4f8cff,
+        #2563eb
+    );
+
+    transition:.35s;
+
+    box-shadow:0 12px 30px rgba(79,140,255,.25);
+
+}
+
+.hire-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.5),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    transition:.8s;
+
+}
+
+.hire-btn:hover::before{
+
+    left:160%;
+
+}
+
+.hire-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 18px 40px rgba(79,140,255,.35);
+
+}
 
 
