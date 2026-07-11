@@ -436,6 +436,128 @@ transform:scale(1);
 
 }
 /*=========================================
+      NAV LINKS PREMIUM EFFECTS
+=========================================*/
+
+.nav-link i{
+    font-size:22px;
+    transition:.35s ease;
+}
+
+.nav-link span{
+    position:relative;
+    transition:.35s ease;
+}
+
+/* Hover */
+
+.nav-link:hover{
+
+    background:rgba(255,255,255,.06);
+
+    color:#fff;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(79,140,255,.18);
+
+}
+
+.nav-link:hover i{
+
+    color:#4f8cff;
+
+    transform:translateY(-4px) scale(1.12);
+
+}
+
+.nav-link:hover span{
+
+    letter-spacing:.3px;
+
+}
+
+/* Active Link */
+
+.nav-link.active{
+
+    background:linear-gradient(
+        135deg,
+        rgba(79,140,255,.22),
+        rgba(79,140,255,.10)
+    );
+
+    color:#fff;
+
+    box-shadow:0 0 35px rgba(79,140,255,.20);
+
+}
+
+.nav-link.active i{
+
+    color:#6fa6ff;
+
+}
+
+.nav-link.active::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:20px;
+
+    right:20px;
+
+    bottom:8px;
+
+    height:3px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        90deg,
+        #4f8cff,
+        #8ab8ff
+    );
+
+}
+
+/* Ripple Hover */
+
+.nav-link::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:50px;
+
+    background:radial-gradient(circle,
+    rgba(79,140,255,.18),
+    transparent 70%);
+
+    opacity:0;
+
+    transform:scale(.7);
+
+    transition:.4s;
+
+    z-index:-1;
+
+}
+
+.nav-link:hover::before{
+
+    opacity:1;
+
+    transform:scale(1.15);
+
+}
+
+/*=========================================
       SLIDING NAVIGATION INDICATOR
 =========================================*/
 
