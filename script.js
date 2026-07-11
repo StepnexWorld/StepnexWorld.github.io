@@ -126,3 +126,122 @@ topBtn.addEventListener("click", () => {
     });
 });
 
+/*=========================================
+        PREMIUM NAVBAR
+=========================================*/
+
+const header = document.getElementById("header");
+const menuToggle = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector(".nav-menu");
+const navItems = document.querySelectorAll(".nav-item");
+const sections = document.querySelectorAll("section");
+
+/* Header Scroll */
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY>50){
+
+        header.classList.add("scrolled");
+
+    }else{
+
+        header.classList.remove("scrolled");
+
+    }
+
+});
+
+/* Mobile Menu */
+
+menuToggle.addEventListener("click",()=>{
+
+    navMenu.classList.toggle("active");
+
+    const icon=menuToggle.querySelector("i");
+
+    if(navMenu.classList.contains("active")){
+
+        icon.classList.replace("ri-menu-3-line","ri-close-line");
+
+    }else{
+
+        icon.classList.replace("ri-close-line","ri-menu-3-line");
+
+    }
+
+});
+
+/* Close Menu */
+
+navItems.forEach(item=>{
+
+    item.addEventListener("click",()=>{
+
+        navMenu.classList.remove("active");
+
+        const icon=menuToggle.querySelector("i");
+
+        icon.classList.replace("ri-close-line","ri-menu-3-line");
+
+    });
+
+});
+
+/* Active Menu on Scroll */
+
+window.addEventListener("scroll",()=>{
+
+    let current="";
+
+    sections.forEach(section=>{
+
+        const sectionTop=section.offsetTop-140;
+
+        if(window.scrollY>=sectionTop){
+
+            current=section.getAttribute("id");
+
+        }
+
+    });
+
+    navItems.forEach(link=>{
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href")==="#"+current){
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+/* Smooth Scroll */
+
+navItems.forEach(link=>{
+
+    link.addEventListener("click",(e)=>{
+
+        e.preventDefault();
+
+        const target=document.querySelector(link.getAttribute("href"));
+
+        if(target){
+
+            window.scrollTo({
+
+                top:target.offsetTop-90,
+
+                behavior:"smooth"
+
+            });
+
+        }
+
+    });
+
+});
