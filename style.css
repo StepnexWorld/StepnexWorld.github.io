@@ -2580,141 +2580,213 @@ padding:12px 24px;
 
 }
 /* ===========================
-   HERO BUTTONS
+   HERO IMAGE SIDE
 =========================== */
 
-.hero-buttons{
+.hero-right{
+
     display:flex;
-    gap:20px;
-    margin-top:40px;
-    flex-wrap:wrap;
-}
-
-.btn-primary,
-.btn-secondary{
-
-    display:inline-flex;
+    justify-content:center;
     align-items:center;
-    gap:10px;
 
-    padding:16px 34px;
-
-    border-radius:60px;
-
-    font-size:18px;
-
-    font-weight:600;
-
-    text-decoration:none;
-
-    transition:.35s ease;
+    position:relative;
 
 }
 
-.btn-primary{
 
-    background:linear-gradient(135deg,#4f8cff,#2d6cff);
+.image-card{
 
-    color:#fff;
+    position:relative;
 
-    box-shadow:0 15px 35px rgba(79,140,255,.35);
+    width:430px;
+    height:520px;
 
-}
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-.btn-primary:hover{
-
-    transform:translateY(-6px);
-
-    box-shadow:0 20px 40px rgba(79,140,255,.45);
-
-}
-
-.btn-primary i{
-
-    transition:.35s;
-
-}
-
-.btn-primary:hover i{
-
-    transform:translateX(6px);
-
-}
-
-.btn-secondary{
-
-    color:#fff;
-
-    border:1px solid rgba(255,255,255,.15);
+    border-radius:40px;
 
     background:rgba(255,255,255,.05);
 
-    backdrop-filter:blur(10px);
-
-}
-
-.btn-secondary:hover{
-
-    background:rgba(255,255,255,.10);
-
-    transform:translateY(-6px);
-
-}
-
-/* ===========================
-   HERO STATS
-=========================== */
-
-.hero-stats{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:20px;
-
-    margin-top:60px;
-
-}
-
-.stat-card{
-
-    padding:22px;
-
-    text-align:center;
-
-    border-radius:22px;
-
-    background:rgba(255,255,255,.05);
-
-    border:1px solid rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.10);
 
     backdrop-filter:blur(15px);
 
-    transition:.35s;
+    overflow:hidden;
+
+    animation:floatImage 5s ease-in-out infinite;
 
 }
 
-.stat-card:hover{
 
-    transform:translateY(-8px);
+/* Image */
 
-    border-color:#4f8cff;
+.image-card img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    position:relative;
+
+    z-index:2;
 
 }
 
-.stat-card h3{
+
+/* Glow Behind Image */
+
+.image-glow{
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    background:#4f8cff;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.35;
+
+    z-index:1;
+
+}
+
+
+/* Experience Badge */
+
+.experience-badge{
+
+    position:absolute;
+
+    top:30px;
+    right:-25px;
+
+    padding:15px 25px;
+
+    background:rgba(10,20,50,.85);
 
     color:#fff;
 
-    font-size:34px;
+    border:1px solid rgba(255,255,255,.1);
 
-    margin-bottom:8px;
+    border-radius:50px;
+
+    font-weight:600;
+
+    z-index:5;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
 
 }
 
-.stat-card span{
 
-    color:#9cbcff;
+/* Floating Animation */
+
+@keyframes floatImage{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ===========================
+   HERO RESPONSIVE
+=========================== */
+
+
+@media(max-width:1100px){
+
+.hero-content{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+
+.hero-left p{
+
+    margin:auto;
+
+}
+
+
+.hero-buttons{
+
+    justify-content:center;
+
+}
+
+
+.hero-stats{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.hero-right{
+
+    margin-top:50px;
+
+}
+
+
+}
+
+
+@media(max-width:600px){
+
+.hero-left h1{
+
+    font-size:48px;
+
+}
+
+
+.hero-left h2{
+
+    font-size:28px;
+
+}
+
+
+.hero-stats{
+
+    grid-template-columns:1fr;
+
+}
+
+
+.image-card{
+
+    width:300px;
+
+    height:400px;
+
+}
 
 }
