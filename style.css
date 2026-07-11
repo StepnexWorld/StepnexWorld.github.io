@@ -347,20 +347,25 @@ header{
         PREMIUM NAVBAR V6
 =========================================*/
 
-#header{
+header{
     position:fixed;
-    top:0;
+    top:18px;
     left:0;
-    width:100%;
-    z-index:9999;
-    transition:.4s ease;
-}
+    right:0;
+    width:95%;
+    max-width:1450px;
+    margin:0 auto;
 
-#header.scrolled{
-    background:rgba(8,12,28,.75);
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-    box-shadow:0 10px 40px rgba(0,0,0,.35);
+    z-index:1000;
+
+    background:rgba(9,16,48,.80);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-radius:22px;
+    border:1px solid rgba(255,255,255,.06);
+
+    transition:.4s;
 }
 
 .navbar{
