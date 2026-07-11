@@ -332,13 +332,82 @@ header{
 }
 
 /*=========================================
-      PREMIUM NAVIGATION V4
+        PREMIUM NAVBAR V6
 =========================================*/
+
+#header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:9999;
+    transition:.4s ease;
+}
+
+#header.scrolled{
+    background:rgba(8,12,28,.75);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    box-shadow:0 10px 40px rgba(0,0,0,.35);
+}
+
+.navbar{
+    max-width:1350px;
+    margin:auto;
+    padding:22px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:.4s;
+}
+
+#header.scrolled .navbar{
+    padding:16px 40px;
+}
+
+/* Logo */
+
+.logo{
+    font-size:46px;
+    font-weight:800;
+    color:#fff;
+    cursor:pointer;
+    user-select:none;
+    transition:.35s;
+}
+
+.logo span{
+    color:#4f8cff;
+    animation:pulseDot 2s infinite;
+}
+
+.logo:hover{
+    transform:translateY(-2px);
+    text-shadow:0 0 20px rgba(79,140,255,.5);
+}
+
+@keyframes pulseDot{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.35);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+/* Navigation */
 
 .nav-links{
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:14px;
     list-style:none;
 }
 
@@ -348,6 +417,7 @@ header{
 
 .nav-link{
 
+    position:relative;
     display:flex;
     align-items:center;
     gap:10px;
@@ -356,60 +426,15 @@ header{
 
     border-radius:50px;
 
+    color:#d8e2ff;
+
     text-decoration:none;
 
-    color:#dbeafe;
-
-    font-size:16px;
-
-    font-weight:500;
+    font-weight:600;
 
     transition:.35s ease;
 
-    position:relative;
-
 }
-
-.nav-link i{
-
-    color:#4f8cff;
-
-    font-size:20px;
-
-    transition:.35s;
-
-}
-
-.nav-link:hover{
-
-    color:#fff;
-
-    transform:translateY(-2px);
-
-}
-
-.nav-link:hover i{
-
-    transform:rotate(-10deg) scale(1.15);
-
-}
-
-.nav-link.active{
-
-    background:linear-gradient(135deg,#4f8cff,#2563eb);
-
-    color:#fff;
-
-    box-shadow:0 10px 25px rgba(79,140,255,.35);
-
-}
-
-.nav-link.active i{
-
-    color:#fff;
-
-}
-
 /*=========================================
       SLIDING NAVIGATION INDICATOR
 =========================================*/
