@@ -2440,3 +2440,142 @@ padding:12px 24px;
     color:#d7e2ff;
 
 }
+/* ===========================
+   HERO BUTTONS
+=========================== */
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+.btn-primary,
+.btn-secondary{
+
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    padding:16px 34px;
+
+    border-radius:60px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.35s ease;
+
+}
+
+.btn-primary{
+
+    background:linear-gradient(135deg,#4f8cff,#2d6cff);
+
+    color:#fff;
+
+    box-shadow:0 15px 35px rgba(79,140,255,.35);
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 20px 40px rgba(79,140,255,.45);
+
+}
+
+.btn-primary i{
+
+    transition:.35s;
+
+}
+
+.btn-primary:hover i{
+
+    transform:translateX(6px);
+
+}
+
+.btn-secondary{
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(10px);
+
+}
+
+.btn-secondary:hover{
+
+    background:rgba(255,255,255,.10);
+
+    transform:translateY(-6px);
+
+}
+
+/* ===========================
+   HERO STATS
+=========================== */
+
+.hero-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+    margin-top:60px;
+
+}
+
+.stat-card{
+
+    padding:22px;
+
+    text-align:center;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    transition:.35s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#4f8cff;
+
+}
+
+.stat-card h3{
+
+    color:#fff;
+
+    font-size:34px;
+
+    margin-bottom:8px;
+
+}
+
+.stat-card span{
+
+    color:#9cbcff;
+
+}
