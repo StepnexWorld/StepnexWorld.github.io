@@ -799,7 +799,12 @@ Hero
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:170px 8% 120px;
+
+    /* OLD */
+    /* padding:170px 8% 120px; */
+
+    /* NEW */
+    padding:120px 8% 100px;
 }
 
 .hero-content{
