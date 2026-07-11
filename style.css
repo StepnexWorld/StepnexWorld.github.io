@@ -42,18 +42,20 @@ Container
 header{
     position:fixed;
     top:18px;
-    left:50%;
-    transform:translateX(-50%);
+    left:0;
+    right:0;
     width:95%;
-    max-width:1500px;
+    max-width:1450px;
+    margin:0 auto;
+
     z-index:1000;
 
-    background:rgba(9,16,48,.78);
+    background:rgba(9,16,48,.80);
     backdrop-filter:blur(18px);
     -webkit-backdrop-filter:blur(18px);
 
-    border:1px solid rgba(255,255,255,.06);
     border-radius:22px;
+    border:1px solid rgba(255,255,255,.06);
 
     transition:.4s;
 }
