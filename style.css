@@ -1622,8 +1622,9 @@ Footer
     }
 
     .hero{
-        padding:120px 5% 70px;
-    }
+    padding:150px 8% 100px;
+    min-height:100vh;
+}
 
     .hero h1{
         font-size:42px;
