@@ -35,27 +35,31 @@ Container
     margin:auto;
 }
 
-/* ===============================
-Navbar
-================================ */
+/*=========================================
+        PREMIUM NAVBAR
+=========================================*/
 
-.navbar{
+header{
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 8%;
-    background:rgba(5,8,22,.80);
-    backdrop-filter:blur(16px);
     z-index:1000;
+    padding:18px 8%;
+    background:rgba(8,12,32,.75);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
-    font-size:30px;
-    font-weight:700;
+    font-size:34px;
+    font-weight:800;
     color:#fff;
 }
 
@@ -65,33 +69,85 @@ Navbar
 
 .nav-links{
     display:flex;
+    align-items:center;
+    gap:12px;
     list-style:none;
-    gap:35px;
+}
+
+.nav-links li{
+    list-style:none;
 }
 
 .nav-links a{
-    text-decoration:none;
+    display:flex;
+    align-items:center;
+    gap:10px;
     color:#fff;
-    transition:.3s;
-    font-weight:500;
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:999px;
+    transition:.35s ease;
+    overflow:hidden;
 }
 
-.nav-links a:hover{
+.nav-links a i{
+    font-size:20px;
     color:#4f8cff;
 }
 
+.nav-links a span{
+    max-width:0;
+    overflow:hidden;
+    white-space:nowrap;
+    transition:max-width .35s ease;
+}
+
+.nav-links a:hover{
+    background:rgba(79,140,255,.12);
+    box-shadow:0 0 25px rgba(79,140,255,.20);
+}
+
+.nav-links a:hover span{
+    max-width:120px;
+}
+
 .hire-btn{
-    text-decoration:none;
-    background:#4f8cff;
-    color:#fff;
-    padding:12px 28px;
+    padding:14px 30px;
     border-radius:50px;
+    text-decoration:none;
+    background:linear-gradient(135deg,#4f8cff,#2563eb);
+    color:#fff;
+    font-weight:600;
     transition:.35s;
 }
 
 .hire-btn:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(79,140,255,.35);
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(79,140,255,.35);
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+.nav-links{
+    gap:6px;
+}
+
+.nav-links a{
+    padding:10px 14px;
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.nav-links{
+    display:none;
+}
+
 }
 
 /* ===============================
