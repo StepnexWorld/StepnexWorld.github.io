@@ -331,6 +331,85 @@ header{
 
 }
 
+/*=========================================
+      PREMIUM NAVIGATION V4
+=========================================*/
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    list-style:none;
+}
+
+.nav-links li{
+    list-style:none;
+}
+
+.nav-link{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:14px 22px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:#dbeafe;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    transition:.35s ease;
+
+    position:relative;
+
+}
+
+.nav-link i{
+
+    color:#4f8cff;
+
+    font-size:20px;
+
+    transition:.35s;
+
+}
+
+.nav-link:hover{
+
+    color:#fff;
+
+    transform:translateY(-2px);
+
+}
+
+.nav-link:hover i{
+
+    transform:rotate(-10deg) scale(1.15);
+
+}
+
+.nav-link.active{
+
+    background:linear-gradient(135deg,#4f8cff,#2563eb);
+
+    color:#fff;
+
+    box-shadow:0 10px 25px rgba(79,140,255,.35);
+
+}
+
+.nav-link.active i{
+
+    color:#fff;
+
+}
+
 /* ===============================
 Hero
 ================================ */
