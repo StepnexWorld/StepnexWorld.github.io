@@ -230,3 +230,125 @@ document.querySelector(".nav-links").addEventListener("mouseleave",()=>{
     }
 
 });
+/*=========================================
+        PREMIUM NAVBAR V6
+=========================================*/
+
+const header = document.getElementById("header");
+const menuToggle = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector(".nav-links");
+const navItems = document.querySelectorAll(".nav-link");
+const sections = document.querySelectorAll("section");
+
+/* Navbar Blur */
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY>50){
+
+        header.classList.add("scrolled");
+
+    }else{
+
+        header.classList.remove("scrolled");
+
+    }
+
+});
+
+/* Mobile Menu */
+
+menuToggle.addEventListener("click",()=>{
+
+    navMenu.classList.toggle("active");
+
+    const icon=menuToggle.querySelector("i");
+
+    if(navMenu.classList.contains("active")){
+
+        icon.classList.remove("ri-menu-3-line");
+        icon.classList.add("ri-close-large-line");
+
+    }else{
+
+        icon.classList.remove("ri-close-large-line");
+        icon.classList.add("ri-menu-3-line");
+
+    }
+
+});
+
+/* Close Mobile Menu */
+
+navItems.forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        navMenu.classList.remove("active");
+
+        const icon=menuToggle.querySelector("i");
+
+        icon.classList.remove("ri-close-large-line");
+        icon.classList.add("ri-menu-3-line");
+
+    });
+
+});
+
+/* Active Menu */
+
+window.addEventListener("scroll",()=>{
+
+    let current="";
+
+    sections.forEach(section=>{
+
+        const top=section.offsetTop-180;
+        const height=section.offsetHeight;
+
+        if(window.scrollY>=top &&
+           window.scrollY<top+height){
+
+            current=section.getAttribute("id");
+
+        }
+
+    });
+
+    navItems.forEach(link=>{
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href")==="#"+current){
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+/* Smooth Scroll */
+
+navItems.forEach(link=>{
+
+    link.addEventListener("click",(e)=>{
+
+        e.preventDefault();
+
+        const target=document.querySelector(
+            link.getAttribute("href")
+        );
+
+        window.scrollTo({
+
+            top:target.offsetTop-90,
+
+            behavior:"smooth"
+
+        });
+
+    });
+
+});
