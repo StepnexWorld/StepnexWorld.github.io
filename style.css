@@ -2715,3 +2715,36 @@ header.scrolled{
     justify-content:center;
     align-items:flex-end;
 }
+/* ===============================
+   Navbar Scroll Effect
+==================================*/
+
+header.scrolled{
+    top:10px;
+    width:92%;
+    background:rgba(7,13,34,.92);
+    backdrop-filter:blur(28px);
+    -webkit-backdrop-filter:blur(28px);
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+header.scrolled .navbar{
+    padding:16px 35px;
+}
+
+header.scrolled .hire-btn{
+    padding:14px 30px;
+}
+
+header.scrolled .logo{
+    transform:scale(.92);
+}
+
+.logo{
+    transition:.35s;
+}
+
+.navbar,
+.hire-btn{
+    transition:.35s;
+}
