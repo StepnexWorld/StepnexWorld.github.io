@@ -410,6 +410,62 @@ header{
 
 }
 
+/*=========================================
+      SLIDING NAVIGATION INDICATOR
+=========================================*/
+
+.nav-links{
+    position:relative;
+}
+
+.nav-indicator{
+
+    position:absolute;
+
+    left:0;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:0;
+
+    height:52px;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#4f8cff,#2563eb);
+
+    box-shadow:0 12px 30px rgba(79,140,255,.30);
+
+    z-index:0;
+
+    transition:
+    left .45s cubic-bezier(.22,1,.36,1),
+    width .45s cubic-bezier(.22,1,.36,1);
+
+}
+
+.nav-link{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.nav-link.active{
+
+    color:#fff !important;
+
+}
+
+.nav-link.active i{
+
+    color:#fff !important;
+
+}
+
 /* ===============================
 Hero
 ================================ */
