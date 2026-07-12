@@ -348,3 +348,49 @@ card.style.transform=
 });
 
 });
+/*=========================================
+      MOUSE GLOW + ACTIVE CARD
+=========================================*/
+
+const experienceCards = document.querySelectorAll(".timeline-card");
+
+experienceCards.forEach(card=>{
+
+    card.addEventListener("mousemove",(e)=>{
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+
+        const y = e.clientY - rect.top;
+
+        card.style.setProperty("--mouse-x",`${x}px`);
+        card.style.setProperty("--mouse-y",`${y}px`);
+
+    });
+
+});
+
+const activeObserver = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            experienceCards.forEach(card=>card.classList.remove("active"));
+
+            entry.target.querySelector(".timeline-card").classList.add("active");
+
+        }
+
+    });
+
+},{
+    threshold:0.6
+});
+
+document.querySelectorAll(".timeline-item").forEach(item=>{
+
+    activeObserver.observe(item);
+
+});
