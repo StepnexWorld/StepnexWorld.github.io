@@ -5411,3 +5411,43 @@ background:rgba(79,140,255,.10);
     transform:translateX(0);
 
 }
+/*=========================================
+      TIMELINE GROW ANIMATION
+=========================================*/
+
+.timeline{
+
+    position:relative;
+
+}
+
+.timeline::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    transform:translateX(-50%);
+
+    width:4px;
+
+    height:0;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        to bottom,
+        #60a5fa,
+        #2563eb,
+        #1d4ed8
+    );
+
+    transition:height .25s linear;
+
+    z-index:2;
+
+}
