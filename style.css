@@ -4143,3 +4143,357 @@ background:rgba(79,140,255,.10);
 }
 
 }
+/*=========================================
+              SKILLS SECTION
+=========================================*/
+
+.skills{
+    position:relative;
+    padding:120px 8%;
+    overflow:hidden;
+}
+
+.skills-wrapper{
+
+    max-width:1300px;
+    margin:70px auto 0;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:start;
+
+}
+
+/*=========================================
+            TECH STACK
+=========================================*/
+
+.tech-stack{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.tech-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:30px 20px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    backdrop-filter:blur(14px);
+
+    transition:.4s ease;
+
+}
+
+.tech-item:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#4f8cff;
+
+    box-shadow:0 20px 45px rgba(79,140,255,.18);
+
+}
+
+.tech-item i{
+
+    font-size:42px;
+
+    color:#4f8cff;
+
+    transition:.4s;
+
+}
+
+.tech-item:hover i{
+
+    transform:scale(1.15) rotate(-8deg);
+
+}
+
+.tech-item span{
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+}
+/*=========================================
+            SKILL BARS
+=========================================*/
+
+.skill-bars{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+
+}
+
+.skill{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:22px;
+
+    padding:22px;
+
+    transition:.35s ease;
+
+}
+
+.skill:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#4f8cff;
+
+    box-shadow:0 18px 40px rgba(79,140,255,.15);
+
+}
+
+/* Skill Heading */
+
+.skill-title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:14px;
+
+}
+
+.skill-title span:first-child{
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:600;
+
+}
+
+.skill-title span:last-child{
+
+    color:#4f8cff;
+
+    font-weight:700;
+
+    font-size:16px;
+
+}
+
+/* Progress Background */
+
+.progress{
+
+    width:100%;
+
+    height:10px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+/* Progress Fill */
+
+.progress span{
+
+    display:block;
+
+    height:100%;
+
+    border-radius:50px;
+
+    background:linear-gradient(90deg,#4f8cff,#2563eb);
+
+    box-shadow:0 0 18px rgba(79,140,255,.45);
+
+    animation:progressFill 2s ease;
+
+}
+
+/* Progress Animation */
+
+@keyframes progressFill{
+
+    from{
+
+        width:0;
+
+    }
+
+}
+/*=========================================
+            SKILLS FINAL
+=========================================*/
+
+/* Background Glow */
+
+.skills::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:550px;
+    height:550px;
+
+    background:#4f8cff;
+
+    border-radius:50%;
+
+    right:-180px;
+    bottom:-180px;
+
+    filter:blur(180px);
+
+    opacity:.10;
+
+    z-index:-1;
+
+}
+
+/* Floating Animation */
+
+.tech-item{
+
+    animation:floatSkill 6s ease-in-out infinite;
+
+}
+
+.tech-item:nth-child(2){animation-delay:.2s;}
+.tech-item:nth-child(3){animation-delay:.4s;}
+.tech-item:nth-child(4){animation-delay:.6s;}
+.tech-item:nth-child(5){animation-delay:.8s;}
+.tech-item:nth-child(6){animation-delay:1s;}
+.tech-item:nth-child(7){animation-delay:1.2s;}
+.tech-item:nth-child(8){animation-delay:1.4s;}
+.tech-item:nth-child(9){animation-delay:1.6s;}
+
+@keyframes floatSkill{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/* Progress Glow */
+
+.skill:hover .progress span{
+
+    box-shadow:0 0 30px rgba(79,140,255,.8);
+
+}
+
+/*=========================================
+        RESPONSIVE
+=========================================*/
+
+@media(max-width:1100px){
+
+.skills-wrapper{
+
+    grid-template-columns:1fr;
+
+    gap:50px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.skills{
+
+    padding:90px 6%;
+
+}
+
+.tech-stack{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.tech-item{
+
+    padding:24px 15px;
+
+}
+
+.tech-item i{
+
+    font-size:34px;
+
+}
+
+.skill{
+
+    padding:18px;
+
+}
+
+.skill-title span:first-child{
+
+    font-size:16px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.tech-stack{
+
+    grid-template-columns:1fr;
+
+}
+
+}
