@@ -398,16 +398,16 @@ document.querySelectorAll(".timeline-item").forEach(item=>{
       3D TESTIMONIAL CAROUSEL
 =========================================*/
 
-const cards = document.querySelectorAll(".review-card");
+const reviewCards = document.querySelectorAll(".review-card");
 const dots = document.querySelectorAll(".dot");
 const nextBtn = document.querySelector(".next");
 const prevBtn = document.querySelector(".prev");
 
 let current = 0;
 
-function updateCarousel(){
+function updateCarousel() {
 
-    cards.forEach((card,index)=>{
+    reviewCards.forEach((card, index) => {
 
         card.classList.remove(
             "active",
@@ -416,25 +416,25 @@ function updateCarousel(){
             "hidden"
         );
 
-        if(index===current){
+        if (index === current) {
 
             card.classList.add("active");
 
         }
 
-        else if(index===((current-1+cards.length)%cards.length)){
+        else if (index === ((current - 1 + reviewCards.length) % reviewCards.length)) {
 
             card.classList.add("left");
 
         }
 
-        else if(index===((current+1)%cards.length)){
+        else if (index === ((current + 1) % reviewCards.length)) {
 
             card.classList.add("right");
 
         }
 
-        else{
+        else {
 
             card.classList.add("hidden");
 
@@ -442,66 +442,85 @@ function updateCarousel(){
 
     });
 
-    dots.forEach(dot=>dot.classList.remove("active"));
+    dots.forEach(dot => dot.classList.remove("active"));
 
-    dots[current].classList.add("active");
+    if (dots[current]) {
+
+        dots[current].classList.add("active");
+
+    }
 
 }
 
-updateCarousel();
+/* Initial Load */
 
-/* Next */
-
-nextBtn.addEventListener("click",()=>{
-
-    current++;
-
-    if(current>=cards.length){
-
-        current=0;
-
-    }
+if (reviewCards.length > 0) {
 
     updateCarousel();
 
-});
+}
 
-/* Previous */
+/* Next Button */
 
-prevBtn.addEventListener("click",()=>{
+if (nextBtn) {
 
-    current--;
+    nextBtn.addEventListener("click", () => {
 
-    if(current<0){
+        current++;
 
-        current=cards.length-1;
+        if (current >= reviewCards.length) {
 
-    }
+            current = 0;
 
-    updateCarousel();
+        }
 
-});
+        updateCarousel();
+
+    });
+
+}
+
+/* Previous Button */
+
+if (prevBtn) {
+
+    prevBtn.addEventListener("click", () => {
+
+        current--;
+
+        if (current < 0) {
+
+            current = reviewCards.length - 1;
+
+        }
+
+        updateCarousel();
+
+    });
+
+}
 
 /* Dots */
 
-dots.forEach((dot,index)=>{
+dots.forEach((dot, index) => {
 
-    dot.addEventListener("click",()=>{
+    dot.addEventListener("click", () => {
 
-        current=index;
+        current = index;
 
         updateCarousel();
 
     });
 
 });
+
 /*=========================================
-      REVIEW CARD GLOW
+      REVIEW CARD MOUSE GLOW
 =========================================*/
 
-cards.forEach(card=>{
+reviewCards.forEach(card => {
 
-    card.addEventListener("mousemove",(e)=>{
+    card.addEventListener("mousemove", (e) => {
 
         const rect = card.getBoundingClientRect();
 
@@ -509,9 +528,9 @@ cards.forEach(card=>{
 
         const y = e.clientY - rect.top;
 
-        card.style.setProperty("--mouse-x",`${x}px`);
+        card.style.setProperty("--mouse-x", `${x}px`);
 
-        card.style.setProperty("--mouse-y",`${y}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
 
     });
 
