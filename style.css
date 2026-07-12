@@ -3721,3 +3721,56 @@ background:rgba(79,140,255,.10);
 }
 
 }
+/*=========================================
+          PREMIUM PORTFOLIO
+=========================================*/
+
+.portfolio{
+    position:relative;
+    padding:120px 8%;
+    overflow:hidden;
+}
+
+.portfolio-grid{
+
+    max-width:1300px;
+    margin:70px auto 0;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+/*=========================
+      CARD
+=========================*/
+
+.portfolio-card{
+
+    position:relative;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(18px);
+
+    transition:.45s ease;
+
+}
+
+.portfolio-card:hover{
+
+    transform:translateY(-15px);
+
+    border-color:#4f8cff;
+
+    box-shadow:0 30px 70px rgba(79,140,255,.20);
+
+}
