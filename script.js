@@ -312,3 +312,39 @@ window.addEventListener("scroll",()=>{
     timeline.style.setProperty("--lineHeight",(progress*100)+"%");
 
 });
+/*=========================================
+        REAL 3D CARD TILT
+=========================================*/
+
+const cards = document.querySelectorAll(".timeline-card");
+
+cards.forEach(card=>{
+
+card.addEventListener("mousemove",(e)=>{
+
+const rect = card.getBoundingClientRect();
+
+const x = e.clientX - rect.left;
+
+const y = e.clientY - rect.top;
+
+const rotateY = ((x / rect.width)-0.5)*18;
+
+const rotateX = ((y / rect.height)-0.5)*-18;
+
+card.style.transform=
+`perspective(1200px)
+ rotateX(${rotateX}deg)
+ rotateY(${rotateY}deg)
+ translateY(-10px)`;
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.transform=
+"perspective(1200px) rotateX(0) rotateY(0) translateY(0)";
+
+});
+
+});
