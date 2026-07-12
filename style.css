@@ -5451,3 +5451,45 @@ background:rgba(79,140,255,.10);
     z-index:2;
 
 }
+/*=========================================
+        3D TILT EFFECT
+=========================================*/
+
+.timeline-card{
+
+    transform-style:preserve-3d;
+
+    will-change:transform;
+
+    transition:
+    transform .18s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+
+    cursor:pointer;
+
+}
+
+.timeline-card *{
+
+    transform:translateZ(20px);
+
+}
+
+.timeline-card h3{
+
+    transform:translateZ(45px);
+
+}
+
+.timeline-card .year{
+
+    transform:translateZ(55px);
+
+}
+
+.timeline-tags{
+
+    transform:translateZ(30px);
+
+}
