@@ -3331,3 +3331,129 @@ background:rgba(79,140,255,.10);
 }
 
 }
+/*=========================================
+            SERVICES SECTION
+=========================================*/
+
+.services{
+    position:relative;
+    padding:120px 8%;
+    overflow:hidden;
+}
+
+.services-grid{
+
+    max-width:1300px;
+    margin:70px auto 0;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+/*=========================
+      SERVICE CARD
+=========================*/
+
+.service-card{
+
+    position:relative;
+
+    padding:40px 35px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    backdrop-filter:blur(16px);
+
+    transition:.4s ease;
+
+    overflow:hidden;
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:#4f8cff;
+
+    box-shadow:0 25px 60px rgba(79,140,255,.18);
+
+}
+
+/* Top Glow */
+
+.service-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-80px;
+    right:-80px;
+
+    width:180px;
+    height:180px;
+
+    background:#4f8cff;
+
+    border-radius:50%;
+
+    filter:blur(80px);
+
+    opacity:0;
+
+    transition:.45s;
+
+}
+
+.service-card:hover::before{
+
+    opacity:.20;
+
+}
+
+/*=========================
+      SERVICE ICON
+=========================*/
+
+.service-icon{
+
+    width:80px;
+    height:80px;
+
+    border-radius:22px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(135deg,#4f8cff,#2563eb);
+
+    margin-bottom:28px;
+
+    box-shadow:0 15px 35px rgba(79,140,255,.30);
+
+    transition:.4s;
+
+}
+
+.service-icon i{
+
+    font-size:36px;
+
+    color:#fff;
+
+}
+
+.service-card:hover .service-icon{
+
+    transform:rotate(-8deg) scale(1.08);
+
+}
