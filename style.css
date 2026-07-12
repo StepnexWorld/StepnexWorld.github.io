@@ -5435,7 +5435,7 @@ background:rgba(79,140,255,.10);
 
     width:4px;
 
-    height:0;
+    height:var(--lineHeight,0%);
 
     border-radius:50px;
 
