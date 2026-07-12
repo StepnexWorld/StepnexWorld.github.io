@@ -724,26 +724,12 @@ scrollTopBtn.addEventListener("click", () => {
     });
 
 });
-/*=========================================
-        PREMIUM PRELOADER
-=========================================*/
-
 document.addEventListener("DOMContentLoaded", () => {
 
     const preloader = document.getElementById("preloader");
 
-    if (!preloader) return;
+    if(!preloader) return;
 
-    setTimeout(() => {
-
-        preloader.classList.add("hide");
-
-        setTimeout(() => {
-
-            preloader.remove();
-
-        }, 800);
-
-    }, 1500);
+    preloader.style.display = "none";
 
 });
