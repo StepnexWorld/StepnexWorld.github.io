@@ -6294,3 +6294,549 @@ background:rgba(79,140,255,.10);
 }
 
 }
+/*=================================================
+              CONTACT SECTION
+==================================================*/
+
+.contact{
+
+    position:relative;
+    padding:140px 8%;
+    overflow:hidden;
+
+}
+
+.contact::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+    height:650px;
+
+    left:-250px;
+    top:-250px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(79,140,255,.15),
+    transparent 70%);
+
+    filter:blur(120px);
+
+    z-index:-2;
+
+}
+
+.contact::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:550px;
+    height:550px;
+
+    right:-180px;
+    bottom:-180px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(0,220,255,.10),
+    transparent 70%);
+
+    filter:blur(120px);
+
+    z-index:-2;
+
+}
+
+/*====================================*/
+
+.contact-container{
+
+    max-width:1350px;
+
+    margin:80px auto 0;
+
+    display:grid;
+
+    grid-template-columns:420px 1fr;
+
+    gap:60px;
+
+    align-items:start;
+
+}
+
+/*====================================*/
+
+.contact-info{
+
+    display:grid;
+
+    gap:25px;
+
+}
+
+/*====================================*/
+
+.contact-card{
+
+    position:relative;
+
+    padding:30px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+    transition:.45s;
+
+    cursor:pointer;
+
+}
+
+.contact-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:#4f8cff;
+
+    box-shadow:
+
+    0 25px 60px rgba(79,140,255,.25);
+
+}
+
+.contact-card i{
+
+    font-size:34px;
+
+    color:#4f8cff;
+
+    margin-bottom:18px;
+
+    display:inline-block;
+
+}
+
+.contact-card h3{
+
+    color:#fff;
+
+    font-size:22px;
+
+    margin-bottom:10px;
+
+}
+
+.contact-card p{
+
+    color:#b8c8e8;
+
+    line-height:1.8;
+
+}
+/*=================================================
+                CONTACT FORM
+==================================================*/
+
+.contact-form{
+
+    position:relative;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+}
+
+/*====================================*/
+
+.contact-form form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.input-box{
+
+    position:relative;
+
+}
+
+.input-box input,
+.input-box textarea{
+
+    width:100%;
+
+    padding:18px 22px;
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,.10);
+
+    background:rgba(255,255,255,.04);
+
+    color:#fff;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.35s;
+
+    resize:none;
+
+}
+
+.input-box input::placeholder,
+.input-box textarea::placeholder{
+
+    color:#9db0d4;
+
+}
+
+.input-box input:focus,
+.input-box textarea:focus{
+
+    border-color:#4f8cff;
+
+    box-shadow:
+
+    0 0 25px rgba(79,140,255,.20);
+
+    background:rgba(255,255,255,.07);
+
+}
+
+/*======================================
+            SEND BUTTON
+=======================================*/
+
+.contact-btn{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:18px 36px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:#fff;
+
+    background:linear-gradient(
+        135deg,
+        #4f8cff,
+        #2563eb
+    );
+
+    transition:.4s;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.contact-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 20px 45px rgba(79,140,255,.35);
+
+}
+
+.contact-btn i{
+
+    font-size:20px;
+
+    transition:.35s;
+
+}
+
+.contact-btn:hover i{
+
+    transform:translateX(6px);
+
+}
+/*=================================================
+            FORM GLOW EFFECT
+==================================================*/
+
+.contact-form::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+
+    height:320px;
+
+    left:-120px;
+
+    top:-120px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(79,140,255,.18),
+    transparent 70%);
+
+    filter:blur(70px);
+
+}
+
+.contact-form::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    right:-80px;
+
+    bottom:-80px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(0,220,255,.15),
+    transparent 70%);
+
+    filter:blur(70px);
+
+}
+/*=================================================
+            CONTACT FINAL EFFECTS
+==================================================*/
+
+/* Mouse Glow */
+
+.contact-card,
+.contact-form{
+
+    --mouse-x:50%;
+    --mouse-y:50%;
+
+}
+
+.contact-card::after,
+.contact-form::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:var(--mouse-x);
+
+    top:var(--mouse-y);
+
+    width:280px;
+
+    height:280px;
+
+    transform:translate(-50%,-50%);
+
+    background:radial-gradient(circle,
+        rgba(79,140,255,.18),
+        transparent 70%);
+
+    opacity:0;
+
+    transition:.35s;
+
+    pointer-events:none;
+
+}
+
+.contact-card:hover::after,
+.contact-form:hover::after{
+
+    opacity:1;
+
+}
+
+/*======================================
+        FLOATING ANIMATION
+=======================================*/
+
+.contact-card{
+
+    animation:contactFloat 6s ease-in-out infinite;
+
+}
+
+.contact-card:nth-child(2){
+
+    animation-delay:.3s;
+
+}
+
+.contact-card:nth-child(3){
+
+    animation-delay:.6s;
+
+}
+
+.contact-card:nth-child(4){
+
+    animation-delay:.9s;
+
+}
+
+@keyframes contactFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+/*======================================
+        ICON ANIMATION
+=======================================*/
+
+.contact-card:hover i{
+
+    transform:scale(1.15) rotate(8deg);
+
+    transition:.35s;
+
+}
+
+/*======================================
+        RESPONSIVE
+=======================================*/
+
+@media(max-width:1100px){
+
+.contact-container{
+
+    grid-template-columns:1fr;
+
+    gap:40px;
+
+}
+
+.contact-info{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.contact{
+
+    padding:100px 6%;
+
+}
+
+.contact-info{
+
+    grid-template-columns:1fr;
+
+}
+
+.contact-form{
+
+    padding:30px;
+
+}
+
+.contact-card{
+
+    padding:25px;
+
+}
+
+.contact-btn{
+
+    width:100%;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.contact-form{
+
+    padding:22px;
+
+}
+
+.input-box input,
+.input-box textarea{
+
+    padding:16px;
+
+    font-size:15px;
+
+}
+
+.contact-card h3{
+
+    font-size:20px;
+
+}
+
+.contact-card p{
+
+    font-size:15px;
+
+}
+
+}
