@@ -5493,3 +5493,70 @@ background:rgba(79,140,255,.10);
     transform:translateZ(30px);
 
 }
+/*=========================================
+      INTERACTIVE MOUSE GLOW
+=========================================*/
+
+.timeline-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.timeline-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    left:var(--mouse-x,50%);
+    top:var(--mouse-y,50%);
+
+    transform:translate(-50%,-50%);
+
+    background:radial-gradient(circle,
+        rgba(79,140,255,.30),
+        transparent 70%);
+
+    opacity:0;
+
+    transition:opacity .35s;
+
+    pointer-events:none;
+
+}
+
+.timeline-card:hover::before{
+
+    opacity:1;
+
+}
+
+/* Active Card */
+
+.timeline-card.active{
+
+    border-color:#4f8cff;
+
+    box-shadow:
+        0 0 30px rgba(79,140,255,.25),
+        0 20px 60px rgba(79,140,255,.25);
+
+}
+
+.timeline-card.active .year{
+
+    transform:scale(1.08);
+
+}
+
+.timeline-card.active h3{
+
+    color:#4f8cff;
+
+}
