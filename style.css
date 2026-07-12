@@ -3036,3 +3036,119 @@ background:rgba(79,140,255,.10);
     font-size:15px;
 
 }
+/*=========================================
+        ABOUT CONTENT
+=========================================*/
+
+.about-content h2{
+
+    font-size:52px;
+
+    line-height:1.2;
+
+    color:#fff;
+
+    margin-bottom:25px;
+
+}
+
+.about-content h2 span{
+
+    color:#4f8cff;
+
+}
+
+.about-content p{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:#cbd5e1;
+
+    margin-bottom:35px;
+
+    max-width:650px;
+
+}
+
+/*=========================================
+        ABOUT LIST
+=========================================*/
+
+.about-list{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-bottom:45px;
+
+}
+
+.about-list div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:18px 22px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    color:#fff;
+
+    transition:.35s;
+
+    backdrop-filter:blur(10px);
+
+}
+
+.about-list div:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#4f8cff;
+
+    box-shadow:0 18px 40px rgba(79,140,255,.15);
+
+}
+
+.about-list i{
+
+    color:#4f8cff;
+
+    font-size:22px;
+
+}
+
+/*=========================================
+        ABOUT BUTTONS
+=========================================*/
+
+.about-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.about-buttons .btn-primary,
+.about-buttons .btn-secondary{
+
+    min-width:190px;
+
+    justify-content:center;
+
+}
