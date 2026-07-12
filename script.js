@@ -394,3 +394,34 @@ document.querySelectorAll(".timeline-item").forEach(item=>{
     activeObserver.observe(item);
 
 });
+/*=========================================
+      TESTIMONIAL ACTIVE CARD
+=========================================*/
+
+const testimonialCards = document.querySelectorAll(".testimonial-card");
+
+let activeIndex = 0;
+
+function changeActiveCard(){
+
+    testimonialCards.forEach(card=>{
+
+        card.classList.remove("active");
+
+    });
+
+    testimonialCards[activeIndex].classList.add("active");
+
+    activeIndex++;
+
+    if(activeIndex >= testimonialCards.length){
+
+        activeIndex = 0;
+
+    }
+
+}
+
+changeActiveCard();
+
+setInterval(changeActiveCard,3000);
