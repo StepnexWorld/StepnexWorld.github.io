@@ -5561,162 +5561,281 @@ background:rgba(79,140,255,.10);
 
 }
 /*=========================================
-          TESTIMONIALS SECTION
+      3D TESTIMONIALS SECTION
 =========================================*/
 
 .testimonials{
 
     position:relative;
 
-    padding:120px 8%;
+    padding:130px 8%;
 
     overflow:hidden;
 
 }
 
-.testimonial-slider{
-
-    max-width:1350px;
-
-    margin:80px auto 0;
-
-    overflow:hidden;
-
-}
-
-.testimonial-track{
-
-    display:flex;
-
-    gap:35px;
-
-    justify-content:center;
-
-    align-items:stretch;
-
-}
-
-/*=========================================
-        TESTIMONIAL CARD
-=========================================*/
-
-.testimonial-card{
+.testimonial-carousel{
 
     position:relative;
 
-    flex:1;
+    max-width:1350px;
 
-    min-width:350px;
-
-    padding:35px;
-
-    border-radius:30px;
-
-    background:rgba(255,255,255,.05);
-
-    backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    overflow:hidden;
-
-    transition:.45s ease;
-
-    transform-style:preserve-3d;
-
-    cursor:pointer;
-
-}
-
-.testimonial-card:hover{
-
-    transform:
-    perspective(1200px)
-    rotateX(6deg)
-    rotateY(-6deg)
-    translateY(-15px);
-
-    border-color:#4f8cff;
-
-    box-shadow:
-    0 35px 70px rgba(79,140,255,.22);
-
-}
-
-/*=========================================
-        CLIENT INFO
-=========================================*/
-
-.client-top{
+    margin:80px auto 40px;
 
     display:flex;
 
     align-items:center;
 
-    gap:18px;
+    justify-content:center;
 
-    margin-bottom:28px;
+    perspective:1800px;
 
 }
 
-.client-top img{
+.carousel-wrapper{
 
-    width:75px;
+    position:relative;
 
-    height:75px;
+    width:100%;
+
+    height:560px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transform-style:preserve-3d;
+
+}
+
+/*=========================================
+            REVIEW CARD
+=========================================*/
+
+.review-card{
+
+    position:absolute;
+
+    width:380px;
+
+    min-height:450px;
+
+    padding:40px 35px;
+
+    border-radius:32px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:
+        transform .8s ease,
+        opacity .8s ease,
+        filter .8s ease,
+        box-shadow .5s ease;
+
+    transform-style:preserve-3d;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+}
+
+/*=========================================
+            ACTIVE CARD
+=========================================*/
+
+.review-card.active{
+
+    transform:
+        translateZ(220px)
+        scale(1.08);
+
+    z-index:10;
+
+    opacity:1;
+
+    filter:none;
+
+    border-color:#4f8cff;
+
+    box-shadow:
+        0 30px 80px rgba(79,140,255,.30);
+
+}
+
+/*=========================================
+            SIDE CARDS
+=========================================*/
+
+.review-card.left{
+
+    transform:
+        translateX(-360px)
+        rotateY(35deg)
+        scale(.88);
+
+    opacity:.55;
+
+    filter:blur(2px);
+
+}
+
+.review-card.right{
+
+    transform:
+        translateX(360px)
+        rotateY(-35deg)
+        scale(.88);
+
+    opacity:.55;
+
+    filter:blur(2px);
+
+}
+
+.review-card.hidden{
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transform:scale(.7);
+
+}
+/*=========================================
+            AVATAR
+=========================================*/
+
+.review-avatar{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:25px;
+
+}
+
+.review-avatar img{
+
+    width:90px;
+
+    height:90px;
 
     border-radius:50%;
 
     object-fit:cover;
 
-    border:3px solid rgba(79,140,255,.45);
+    border:4px solid rgba(79,140,255,.35);
 
-    transition:.35s;
+    transition:.4s;
 
 }
 
-.testimonial-card:hover img{
+.review-card:hover .review-avatar img{
 
     transform:scale(1.08);
 
     border-color:#4f8cff;
 
 }
+/*=========================================
+        REVIEW CONTENT
+=========================================*/
 
-.client-top h3{
+.review-stars{
 
-    color:#fff;
+    text-align:center;
 
-    font-size:22px;
+    margin:20px 0;
 
-    margin-bottom:6px;
+    color:#FFD700;
+
+    font-size:24px;
+
+    letter-spacing:5px;
+
+    text-shadow:0 0 20px rgba(255,215,0,.5);
+
+    animation:starPulse 2.5s infinite;
 
 }
 
-.client-top span{
+@keyframes starPulse{
 
-    color:#9fb4d9;
+    0%,100%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+    }
+
+}
+
+.review-card p{
+
+    text-align:center;
+
+    color:#d6e3f8;
+
+    font-size:16px;
+
+    line-height:1.9;
+
+    margin:25px 0;
+
+}
+
+.review-card h3{
+
+    text-align:center;
+
+    color:#fff;
+
+    font-size:24px;
+
+    margin-bottom:8px;
+
+}
+
+.review-card span{
+
+    display:block;
+
+    text-align:center;
+
+    color:#9cb7e5;
 
     font-size:15px;
 
 }
+
 /*=========================================
-        TESTIMONIAL CONTENT
+        QUOTE ICON
 =========================================*/
 
-.testimonial-card::after{
+.review-card::before{
 
     content:"❝";
 
     position:absolute;
 
-    top:20px;
+    top:25px;
 
     right:30px;
 
     font-size:120px;
-
-    font-weight:bold;
 
     color:rgba(79,140,255,.08);
 
@@ -5725,295 +5844,124 @@ background:rgba(79,140,255,.10);
     pointer-events:none;
 
 }
-
 /*=========================================
-        STARS
+        NAVIGATION BUTTONS
 =========================================*/
 
-.stars{
-
-    font-size:24px;
-
-    letter-spacing:4px;
-
-    color:#FFD700;
-
-    margin-bottom:20px;
-
-    text-shadow:0 0 15px rgba(255,215,0,.45);
-
-    animation:starGlow 2.5s ease-in-out infinite;
-
-}
-
-@keyframes starGlow{
-
-    0%,100%{
-
-        transform:scale(1);
-
-        opacity:1;
-
-    }
-
-    50%{
-
-        transform:scale(1.08);
-
-        opacity:.85;
-
-    }
-
-}
-
-/*=========================================
-        REVIEW TEXT
-=========================================*/
-
-.testimonial-card p{
-
-    color:#d5dff2;
-
-    line-height:1.9;
-
-    font-size:16px;
-
-    position:relative;
-
-    z-index:2;
-
-}
-
-/*=========================================
-        SHINE EFFECT
-=========================================*/
-
-.testimonial-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:-120%;
-
-    width:70%;
-
-    height:100%;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.12),
-        transparent
-    );
-
-    transform:skewX(-25deg);
-
-    transition:.8s;
-
-}
-
-.testimonial-card:hover::before{
-
-    left:150%;
-
-}
-
-/*=========================================
-        MOUSE GLOW
-=========================================*/
-
-.testimonial-card{
-
-    --mouse-x:50%;
-    --mouse-y:50%;
-
-}
-
-.testimonial-card .glow{
-
-    position:absolute;
-
-    width:240px;
-
-    height:240px;
-
-    left:var(--mouse-x);
-
-    top:var(--mouse-y);
-
-    transform:translate(-50%,-50%);
-
-    background:radial-gradient(circle,
-    rgba(79,140,255,.22),
-    transparent 70%);
-
-    pointer-events:none;
-
-    opacity:0;
-
-    transition:.3s;
-
-}
-
-.testimonial-card:hover .glow{
-
-    opacity:1;
-
-}
-/*=========================================
-      TESTIMONIALS FINAL
-=========================================*/
-
-/* Floating Animation */
-
-.testimonial-card{
-
-    animation:testimonialFloat 6s ease-in-out infinite;
-
-}
-
-.testimonial-card:nth-child(2){
-
-    animation-delay:.3s;
-
-}
-
-.testimonial-card:nth-child(3){
-
-    animation-delay:.6s;
-
-}
-
-@keyframes testimonialFloat{
-
-    0%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-10px);
-
-    }
-
-    100%{
-
-        transform:translateY(0);
-
-    }
-
-}
-
-/* Active Center Card */
-
-.testimonial-card.active{
-
-    transform:scale(1.08);
-
-    border-color:#4f8cff;
-
-    box-shadow:
-        0 30px 80px rgba(79,140,255,.35);
-
-}
-
-.testimonial-card:not(.active){
-
-    opacity:.75;
-
-    transform:scale(.92);
-
-    filter:blur(1px);
-
-}
-
-/* Background Glow */
-
-.testimonials::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:600px;
-
-    height:600px;
-
-    right:-250px;
-
-    top:-180px;
-
-    background:#4f8cff;
-
-    border-radius:50%;
-
-    filter:blur(180px);
-
-    opacity:.10;
-
-    z-index:-1;
-
-}
-
-/* Responsive */
-
-@media(max-width:992px){
-
-.testimonial-track{
-
-    flex-direction:column;
-
-}
-
-.testimonial-card{
-
-    min-width:100%;
-
-}
-
-.testimonial-card:not(.active){
-
-    transform:scale(1);
-
-    opacity:1;
-
-    filter:none;
-
-}
-
-}
-
-@media(max-width:768px){
-
-.testimonials{
-
-    padding:90px 6%;
-
-}
-
-.client-top img{
+.carousel-btn{
 
     width:60px;
 
     height:60px;
 
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#fff;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    z-index:50;
+
 }
 
-.client-top h3{
+.carousel-btn:hover{
 
-    font-size:20px;
+    background:#4f8cff;
+
+    transform:scale(1.12);
+
+    box-shadow:0 0 30px rgba(79,140,255,.45);
+
+}
+/*=========================================
+        DOTS
+=========================================*/
+
+.carousel-dots{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:14px;
+
+    margin-top:45px;
 
 }
 
-.stars{
+.dot{
 
-    font-size:20px;
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#5d6d88;
+
+    cursor:pointer;
+
+    transition:.35s;
 
 }
+
+.dot.active{
+
+    width:34px;
+
+    border-radius:30px;
+
+    background:#4f8cff;
+
+    box-shadow:0 0 20px rgba(79,140,255,.6);
+
+}
+/*=========================================
+        MOUSE GLOW
+=========================================*/
+
+.review-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    left:var(--mouse-x,50%);
+
+    top:var(--mouse-y,50%);
+
+    transform:translate(-50%,-50%);
+
+    background:radial-gradient(circle,
+        rgba(79,140,255,.18),
+        transparent 70%);
+
+    opacity:0;
+
+    transition:.35s;
+
+    pointer-events:none;
+
+}
+
+.review-card:hover::after{
+
+    opacity:1;
 
 }
