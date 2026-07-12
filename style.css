@@ -5380,3 +5380,34 @@ background:rgba(79,140,255,.10);
 }
 
 }
+/*=========================================
+    EXPERIENCE SCROLL ANIMATION
+=========================================*/
+
+.timeline-item{
+
+    opacity:0;
+
+    transition:1s ease;
+
+}
+
+.timeline-item.left{
+
+    transform:translateX(-120px);
+
+}
+
+.timeline-item.right{
+
+    transform:translateX(120px);
+
+}
+
+.timeline-item.show{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
