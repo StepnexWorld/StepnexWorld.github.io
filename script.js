@@ -262,3 +262,30 @@ document.addEventListener("mousemove",(e)=>{
     `rotateY(${x}deg) rotateX(${-y}deg)`;
 
 });
+/*=========================================
+      EXPERIENCE SCROLL ANIMATION
+=========================================*/
+
+const timelineItems = document.querySelectorAll(".timeline-item");
+
+const timelineObserver = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+},{
+    threshold:.35
+});
+
+timelineItems.forEach(item=>{
+
+    timelineObserver.observe(item);
+
+});
