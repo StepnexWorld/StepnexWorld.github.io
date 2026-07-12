@@ -5560,3 +5560,306 @@ background:rgba(79,140,255,.10);
     color:#4f8cff;
 
 }
+/*=========================================
+          TESTIMONIALS SECTION
+=========================================*/
+
+.testimonials{
+
+    position:relative;
+
+    padding:120px 8%;
+
+    overflow:hidden;
+
+}
+
+.testimonial-slider{
+
+    max-width:1350px;
+
+    margin:80px auto 0;
+
+    overflow:hidden;
+
+}
+
+.testimonial-track{
+
+    display:flex;
+
+    gap:35px;
+
+    justify-content:center;
+
+    align-items:stretch;
+
+}
+
+/*=========================================
+        TESTIMONIAL CARD
+=========================================*/
+
+.testimonial-card{
+
+    position:relative;
+
+    flex:1;
+
+    min-width:350px;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+    transition:.45s ease;
+
+    transform-style:preserve-3d;
+
+    cursor:pointer;
+
+}
+
+.testimonial-card:hover{
+
+    transform:
+    perspective(1200px)
+    rotateX(6deg)
+    rotateY(-6deg)
+    translateY(-15px);
+
+    border-color:#4f8cff;
+
+    box-shadow:
+    0 35px 70px rgba(79,140,255,.22);
+
+}
+
+/*=========================================
+        CLIENT INFO
+=========================================*/
+
+.client-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:28px;
+
+}
+
+.client-top img{
+
+    width:75px;
+
+    height:75px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid rgba(79,140,255,.45);
+
+    transition:.35s;
+
+}
+
+.testimonial-card:hover img{
+
+    transform:scale(1.08);
+
+    border-color:#4f8cff;
+
+}
+
+.client-top h3{
+
+    color:#fff;
+
+    font-size:22px;
+
+    margin-bottom:6px;
+
+}
+
+.client-top span{
+
+    color:#9fb4d9;
+
+    font-size:15px;
+
+}
+/*=========================================
+        TESTIMONIAL CONTENT
+=========================================*/
+
+.testimonial-card::after{
+
+    content:"❝";
+
+    position:absolute;
+
+    top:20px;
+
+    right:30px;
+
+    font-size:120px;
+
+    font-weight:bold;
+
+    color:rgba(79,140,255,.08);
+
+    line-height:1;
+
+    pointer-events:none;
+
+}
+
+/*=========================================
+        STARS
+=========================================*/
+
+.stars{
+
+    font-size:24px;
+
+    letter-spacing:4px;
+
+    color:#FFD700;
+
+    margin-bottom:20px;
+
+    text-shadow:0 0 15px rgba(255,215,0,.45);
+
+    animation:starGlow 2.5s ease-in-out infinite;
+
+}
+
+@keyframes starGlow{
+
+    0%,100%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+        opacity:.85;
+
+    }
+
+}
+
+/*=========================================
+        REVIEW TEXT
+=========================================*/
+
+.testimonial-card p{
+
+    color:#d5dff2;
+
+    line-height:1.9;
+
+    font-size:16px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/*=========================================
+        SHINE EFFECT
+=========================================*/
+
+.testimonial-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:70%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.12),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    transition:.8s;
+
+}
+
+.testimonial-card:hover::before{
+
+    left:150%;
+
+}
+
+/*=========================================
+        MOUSE GLOW
+=========================================*/
+
+.testimonial-card{
+
+    --mouse-x:50%;
+    --mouse-y:50%;
+
+}
+
+.testimonial-card .glow{
+
+    position:absolute;
+
+    width:240px;
+
+    height:240px;
+
+    left:var(--mouse-x);
+
+    top:var(--mouse-y);
+
+    transform:translate(-50%,-50%);
+
+    background:radial-gradient(circle,
+    rgba(79,140,255,.22),
+    transparent 70%);
+
+    pointer-events:none;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+.testimonial-card:hover .glow{
+
+    opacity:1;
+
+}
