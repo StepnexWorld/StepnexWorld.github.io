@@ -395,15 +395,21 @@ document.querySelectorAll(".timeline-item").forEach(item=>{
 
 });
 /*=========================================
-      3D TESTIMONIAL CAROUSEL
+    3D TESTIMONIAL CAROUSEL
 =========================================*/
 
 const reviewCards = document.querySelectorAll(".review-card");
 const dots = document.querySelectorAll(".dot");
 const nextBtn = document.querySelector(".next");
 const prevBtn = document.querySelector(".prev");
+const carousel = document.querySelector(".testimonial-carousel");
 
 let current = 0;
+let autoPlay = null;
+
+/*=========================================
+    UPDATE CAROUSEL
+=========================================*/
 
 function updateCarousel() {
 
@@ -420,21 +426,15 @@ function updateCarousel() {
 
             card.classList.add("active");
 
-        }
-
-        else if (index === ((current - 1 + reviewCards.length) % reviewCards.length)) {
+        } else if (index === (current - 1 + reviewCards.length) % reviewCards.length) {
 
             card.classList.add("left");
 
-        }
-
-        else if (index === ((current + 1) % reviewCards.length)) {
+        } else if (index === (current + 1) % reviewCards.length) {
 
             card.classList.add("right");
 
-        }
-
-        else {
+        } else {
 
             card.classList.add("hidden");
 
@@ -442,65 +442,107 @@ function updateCarousel() {
 
     });
 
-    dots.forEach(dot => dot.classList.remove("active"));
+    dots.forEach((dot, index) => {
 
-    if (dots[current]) {
+        dot.classList.toggle("active", index === current);
 
-        dots[current].classList.add("active");
-
-    }
+    });
 
 }
 
-/* Initial Load */
+/*=========================================
+    NEXT
+=========================================*/
 
-if (reviewCards.length > 0) {
+function nextSlide() {
+
+    current++;
+
+    if (current >= reviewCards.length) {
+
+        current = 0;
+
+    }
 
     updateCarousel();
 
 }
 
-/* Next Button */
+/*=========================================
+    PREVIOUS
+=========================================*/
+
+function prevSlide() {
+
+    current--;
+
+    if (current < 0) {
+
+        current = reviewCards.length - 1;
+
+    }
+
+    updateCarousel();
+
+}
+
+/*=========================================
+    AUTOPLAY
+=========================================*/
+
+function startAutoPlay() {
+
+    stopAutoPlay();
+
+    autoPlay = setInterval(() => {
+
+        nextSlide();
+
+    }, 4000);
+
+}
+
+function stopAutoPlay() {
+
+    if (autoPlay) {
+
+        clearInterval(autoPlay);
+
+    }
+
+}
+
+/*=========================================
+    BUTTON EVENTS
+=========================================*/
 
 if (nextBtn) {
 
     nextBtn.addEventListener("click", () => {
 
-        current++;
+        nextSlide();
 
-        if (current >= reviewCards.length) {
-
-            current = 0;
-
-        }
-
-        updateCarousel();
+        startAutoPlay();
 
     });
 
 }
-
-/* Previous Button */
 
 if (prevBtn) {
 
     prevBtn.addEventListener("click", () => {
 
-        current--;
+        prevSlide();
 
-        if (current < 0) {
-
-            current = reviewCards.length - 1;
-
-        }
-
-        updateCarousel();
+        startAutoPlay();
 
     });
 
 }
 
-/* Dots */
+/*=========================================
+    DOT EVENTS
+=========================================*/
 
 dots.forEach((dot, index) => {
 
@@ -510,12 +552,26 @@ dots.forEach((dot, index) => {
 
         updateCarousel();
 
+        startAutoPlay();
+
     });
 
 });
 
 /*=========================================
-      REVIEW CARD MOUSE GLOW
+    PAUSE ON HOVER
+=========================================*/
+
+if (carousel) {
+
+    carousel.addEventListener("mouseenter", stopAutoPlay);
+
+    carousel.addEventListener("mouseleave", startAutoPlay);
+
+}
+
+/*=========================================
+    MOUSE GLOW
 =========================================*/
 
 reviewCards.forEach(card => {
@@ -525,13 +581,94 @@ reviewCards.forEach(card => {
         const rect = card.getBoundingClientRect();
 
         const x = e.clientX - rect.left;
-
         const y = e.clientY - rect.top;
 
-        card.style.setProperty("--mouse-x", `${x}px`);
-
-        card.style.setProperty("--mouse-y", `${y}px`);
+        card.style.setProperty("--mouse-x", x + "px");
+        card.style.setProperty("--mouse-y", y + "px");
 
     });
 
 });
+
+/*=========================================
+    DRAG / SWIPE SUPPORT
+=========================================*/
+
+let startX = 0;
+let endX = 0;
+
+if (carousel) {
+
+    carousel.addEventListener("touchstart", (e) => {
+
+        startX = e.touches[0].clientX;
+
+    });
+
+    carousel.addEventListener("touchend", (e) => {
+
+        endX = e.changedTouches[0].clientX;
+
+        if (startX - endX > 50) {
+
+            nextSlide();
+            startAutoPlay();
+
+        }
+
+        if (endX - startX > 50) {
+
+            prevSlide();
+            startAutoPlay();
+
+        }
+
+    });
+
+    let isDragging = false;
+
+    carousel.addEventListener("mousedown", (e) => {
+
+        isDragging = true;
+
+        startX = e.clientX;
+
+    });
+
+    window.addEventListener("mouseup", (e) => {
+
+        if (!isDragging) return;
+
+        isDragging = false;
+
+        endX = e.clientX;
+
+        if (startX - endX > 80) {
+
+            nextSlide();
+            startAutoPlay();
+
+        }
+
+        if (endX - startX > 80) {
+
+            prevSlide();
+            startAutoPlay();
+
+        }
+
+    });
+
+}
+
+/*=========================================
+    INIT
+=========================================*/
+
+if (reviewCards.length > 0) {
+
+    updateCarousel();
+
+    startAutoPlay();
+
+}
