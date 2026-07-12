@@ -395,33 +395,103 @@ document.querySelectorAll(".timeline-item").forEach(item=>{
 
 });
 /*=========================================
-      TESTIMONIAL ACTIVE CARD
+      3D TESTIMONIAL CAROUSEL
 =========================================*/
 
-const testimonialCards = document.querySelectorAll(".testimonial-card");
+const cards = document.querySelectorAll(".review-card");
+const dots = document.querySelectorAll(".dot");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
 
-let activeIndex = 0;
+let current = 0;
 
-function changeActiveCard(){
+function updateCarousel(){
 
-    testimonialCards.forEach(card=>{
+    cards.forEach((card,index)=>{
 
-        card.classList.remove("active");
+        card.classList.remove(
+            "active",
+            "left",
+            "right",
+            "hidden"
+        );
+
+        if(index===current){
+
+            card.classList.add("active");
+
+        }
+
+        else if(index===((current-1+cards.length)%cards.length)){
+
+            card.classList.add("left");
+
+        }
+
+        else if(index===((current+1)%cards.length)){
+
+            card.classList.add("right");
+
+        }
+
+        else{
+
+            card.classList.add("hidden");
+
+        }
 
     });
 
-    testimonialCards[activeIndex].classList.add("active");
+    dots.forEach(dot=>dot.classList.remove("active"));
 
-    activeIndex++;
-
-    if(activeIndex >= testimonialCards.length){
-
-        activeIndex = 0;
-
-    }
+    dots[current].classList.add("active");
 
 }
 
-changeActiveCard();
+updateCarousel();
 
-setInterval(changeActiveCard,3000);
+/* Next */
+
+nextBtn.addEventListener("click",()=>{
+
+    current++;
+
+    if(current>=cards.length){
+
+        current=0;
+
+    }
+
+    updateCarousel();
+
+});
+
+/* Previous */
+
+prevBtn.addEventListener("click",()=>{
+
+    current--;
+
+    if(current<0){
+
+        current=cards.length-1;
+
+    }
+
+    updateCarousel();
+
+});
+
+/* Dots */
+
+dots.forEach((dot,index)=>{
+
+    dot.addEventListener("click",()=>{
+
+        current=index;
+
+        updateCarousel();
+
+    });
+
+});
