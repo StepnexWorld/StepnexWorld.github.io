@@ -6840,3 +6840,465 @@ background:rgba(79,140,255,.10);
 }
 
 }
+/*=================================================
+                PREMIUM FOOTER
+==================================================*/
+
+.footer{
+
+    position:relative;
+    overflow:hidden;
+
+    padding:90px 8% 30px;
+
+    background:linear-gradient(
+        180deg,
+        rgba(10,15,30,.95),
+        rgba(5,8,18,1)
+    );
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+/*====================================*/
+
+.footer-glow{
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    left:-250px;
+    top:-250px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(79,140,255,.18),
+    transparent 70%);
+
+    filter:blur(140px);
+
+    pointer-events:none;
+
+}
+
+/*====================================*/
+
+.footer-container{
+
+    max-width:1350px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+
+    1.4fr
+    1fr
+    1fr
+    1fr;
+
+    gap:60px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/*====================================*/
+
+.footer-about{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.footer-logo{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    margin-bottom:20px;
+
+}
+
+.footer-logo span{
+
+    color:#4f8cff;
+
+    font-size:40px;
+
+}
+
+.footer-about p{
+
+    color:#b7c5df;
+
+    line-height:1.9;
+
+    margin-bottom:30px;
+
+    max-width:360px;
+
+}
+
+/*====================================*/
+
+.footer-links h3,
+.footer-contact h3{
+
+    color:#fff;
+
+    margin-bottom:22px;
+
+    font-size:22px;
+
+}
+
+.footer-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+.footer-links a{
+
+    color:#b7c5df;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+}
+
+.footer-links a:hover{
+
+    color:#4f8cff;
+
+    transform:translateX(8px);
+
+}
+
+/*====================================*/
+
+.footer-contact p{
+
+    color:#b7c5df;
+
+    margin-bottom:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.footer-contact i{
+
+    color:#4f8cff;
+
+    font-size:20px;
+
+}
+/*=================================================
+            FOOTER SOCIAL ICONS
+==================================================*/
+
+.footer-social{
+
+    display:flex;
+    gap:18px;
+
+}
+
+.footer-social a{
+
+    width:52px;
+    height:52px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:22px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    transition:.4s;
+
+}
+
+.footer-social a:hover{
+
+    background:#4f8cff;
+
+    transform:translateY(-8px) scale(1.08);
+
+    box-shadow:
+    0 15px 35px rgba(79,140,255,.35);
+
+}
+
+/*======================================
+        ANIMATED LOGO
+=======================================*/
+
+.footer-logo{
+
+    transition:.4s;
+
+}
+
+.footer-logo:hover{
+
+    letter-spacing:2px;
+
+}
+
+.footer-logo span{
+
+    display:inline-block;
+
+    animation:logoFloat 3s ease-in-out infinite;
+
+}
+
+@keyframes logoFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+
+/*======================================
+        FOOTER BOTTOM
+=======================================*/
+
+.footer-bottom{
+
+    margin-top:70px;
+
+    padding-top:30px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.footer-bottom p{
+
+    color:#9fb2d8;
+
+    text-align:center;
+
+    font-size:15px;
+
+}
+
+/*======================================
+        SCROLL TOP BUTTON
+=======================================*/
+
+#scrollTop{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    width:58px;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+    135deg,
+    #4f8cff,
+    #2563eb);
+
+    color:#fff;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(20px);
+
+    transition:.4s;
+
+    box-shadow:
+
+    0 20px 40px rgba(79,140,255,.35);
+
+    z-index:999;
+
+}
+
+#scrollTop.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+#scrollTop:hover{
+
+    transform:translateY(-8px) scale(1.08);
+
+}
+
+/*======================================
+        RESPONSIVE
+=======================================*/
+
+@media(max-width:1100px){
+
+.footer-container{
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:50px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.footer{
+
+    padding:80px 6% 30px;
+
+}
+
+.footer-container{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+.footer-about{
+
+    align-items:center;
+
+}
+
+.footer-about p{
+
+    max-width:100%;
+
+}
+
+.footer-social{
+
+    justify-content:center;
+
+}
+
+.footer-contact p{
+
+    justify-content:center;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.footer-logo{
+
+    font-size:28px;
+
+}
+
+.footer-logo span{
+
+    font-size:34px;
+
+}
+
+.footer-links h3,
+.footer-contact h3{
+
+    font-size:20px;
+
+}
+
+#scrollTop{
+
+    width:50px;
+
+    height:50px;
+
+    right:20px;
+
+    bottom:20px;
+
+}
+
+}
