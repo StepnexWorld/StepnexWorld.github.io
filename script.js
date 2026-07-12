@@ -289,3 +289,26 @@ timelineItems.forEach(item=>{
     timelineObserver.observe(item);
 
 });
+/*=========================================
+      TIMELINE LINE ANIMATION
+=========================================*/
+
+const timeline = document.querySelector(".timeline");
+
+window.addEventListener("scroll",()=>{
+
+    if(!timeline) return;
+
+    const rect = timeline.getBoundingClientRect();
+
+    const windowHeight = window.innerHeight;
+
+    const start = windowHeight * 0.85;
+
+    let progress = (start - rect.top) / rect.height;
+
+    progress = Math.max(0, Math.min(progress,1));
+
+    timeline.style.setProperty("--lineHeight",(progress*100)+"%");
+
+});
