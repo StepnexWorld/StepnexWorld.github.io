@@ -5560,37 +5560,85 @@ background:rgba(79,140,255,.10);
     color:#4f8cff;
 
 }
-/*=========================================
-      3D TESTIMONIALS SECTION
-=========================================*/
+/*=================================================
+        PREMIUM 3D TESTIMONIALS
+==================================================*/
 
 .testimonials{
 
     position:relative;
-
-    padding:130px 8%;
-
     overflow:hidden;
+    padding:140px 8%;
 
 }
+
+.testimonials::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    left:-250px;
+    top:-250px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(79,140,255,.16),
+    transparent 70%);
+
+    filter:blur(120px);
+
+    z-index:-2;
+
+}
+
+.testimonials::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    right:-220px;
+    bottom:-250px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(0,200,255,.12),
+    transparent 70%);
+
+    filter:blur(120px);
+
+    z-index:-2;
+
+}
+
+/*====================================*/
 
 .testimonial-carousel{
 
     position:relative;
 
-    max-width:1350px;
+    max-width:1400px;
 
-    margin:80px auto 40px;
+    margin:90px auto 50px;
 
     display:flex;
 
     align-items:center;
 
-    justify-content:center;
-
-    perspective:1800px;
+    justify-content:space-between;
 
 }
+
+/*====================================*/
 
 .carousel-wrapper{
 
@@ -5606,96 +5654,107 @@ background:rgba(79,140,255,.10);
 
     justify-content:center;
 
+    perspective:2200px;
+
     transform-style:preserve-3d;
 
 }
 
-/*=========================================
-            REVIEW CARD
-=========================================*/
+/*====================================*/
 
 .review-card{
 
     position:absolute;
 
-    width:380px;
+    width:390px;
 
-    min-height:450px;
+    min-height:470px;
 
-    padding:40px 35px;
+    padding:40px;
 
     border-radius:32px;
 
     background:rgba(255,255,255,.05);
 
-    backdrop-filter:blur(22px);
+    backdrop-filter:blur(25px);
 
     border:1px solid rgba(255,255,255,.08);
 
-    transition:
-        transform .8s ease,
-        opacity .8s ease,
-        filter .8s ease,
-        box-shadow .5s ease;
+    overflow:hidden;
 
     transform-style:preserve-3d;
 
-    overflow:hidden;
+    transition:
+
+    transform .8s cubic-bezier(.2,.8,.2,1),
+
+    opacity .6s,
+
+    filter .6s,
+
+    box-shadow .5s,
+
+    border-color .4s;
 
     cursor:pointer;
 
 }
 
-/*=========================================
-            ACTIVE CARD
-=========================================*/
+/*====================================*/
 
 .review-card.active{
 
     transform:
-        translateZ(220px)
-        scale(1.08);
 
-    z-index:10;
+    translateZ(220px)
+
+    scale(1.08);
 
     opacity:1;
 
-    filter:none;
+    z-index:30;
 
     border-color:#4f8cff;
 
     box-shadow:
-        0 30px 80px rgba(79,140,255,.30);
+
+    0 30px 90px rgba(79,140,255,.35);
 
 }
-
-/*=========================================
-            SIDE CARDS
-=========================================*/
 
 .review-card.left{
 
     transform:
-        translateX(-360px)
-        rotateY(35deg)
-        scale(.88);
 
-    opacity:.55;
+    translateX(-370px)
+
+    rotateY(38deg)
+
+    scale(.84);
+
+    opacity:.45;
 
     filter:blur(2px);
+
+    z-index:15;
 
 }
 
 .review-card.right{
 
     transform:
-        translateX(360px)
-        rotateY(-35deg)
-        scale(.88);
 
-    opacity:.55;
+    translateX(370px)
+
+    rotateY(-38deg)
+
+    scale(.84);
+
+    opacity:.45;
 
     filter:blur(2px);
+
+    z-index:15;
 
 }
 
@@ -5703,97 +5762,125 @@ background:rgba(79,140,255,.10);
 
     opacity:0;
 
+    transform:scale(.6);
+
     pointer-events:none;
 
-    transform:scale(.7);
+}
+
+/*====================================*/
+
+.review-card:hover{
+
+    border-color:#5aa8ff;
 
 }
-/*=========================================
-            AVATAR
-=========================================*/
+/*=================================================
+        REVIEW AVATAR
+==================================================*/
 
 .review-avatar{
 
     display:flex;
-
     justify-content:center;
-
     margin-bottom:25px;
+    position:relative;
+    z-index:2;
 
 }
 
 .review-avatar img{
 
-    width:90px;
-
-    height:90px;
-
+    width:95px;
+    height:95px;
     border-radius:50%;
-
     object-fit:cover;
 
     border:4px solid rgba(79,140,255,.35);
 
-    transition:.4s;
+    transition:.45s;
+
+    box-shadow:
+    0 0 0 8px rgba(79,140,255,.08),
+    0 15px 35px rgba(0,0,0,.35);
 
 }
 
-.review-card:hover .review-avatar img{
+.review-card.active .review-avatar img{
 
     transform:scale(1.08);
 
     border-color:#4f8cff;
 
+    box-shadow:
+    0 0 35px rgba(79,140,255,.45);
+
 }
-/*=========================================
-        REVIEW CONTENT
-=========================================*/
+
+.review-card:hover .review-avatar img{
+
+    transform:scale(1.12) rotate(3deg);
+
+}
+
+/*=================================================
+        STARS
+==================================================*/
 
 .review-stars{
 
     text-align:center;
 
-    margin:20px 0;
-
-    color:#FFD700;
+    color:#FFD54A;
 
     font-size:24px;
 
     letter-spacing:5px;
 
-    text-shadow:0 0 20px rgba(255,215,0,.5);
+    margin:18px 0 22px;
 
-    animation:starPulse 2.5s infinite;
+    animation:starFloat 3s ease-in-out infinite;
+
+    text-shadow:
+    0 0 15px rgba(255,213,74,.45);
 
 }
 
-@keyframes starPulse{
+@keyframes starFloat{
 
     0%,100%{
 
-        transform:scale(1);
+        transform:translateY(0);
 
     }
 
     50%{
 
-        transform:scale(1.08);
+        transform:translateY(-4px);
 
     }
 
 }
 
+/*=================================================
+        TEXT
+==================================================*/
+
 .review-card p{
+
+    color:#d9e6ff;
 
     text-align:center;
 
-    color:#d6e3f8;
+    line-height:1.9;
 
     font-size:16px;
 
-    line-height:1.9;
+    margin-bottom:28px;
 
-    margin:25px 0;
+    position:relative;
+
+    z-index:2;
 
 }
 
@@ -5815,15 +5902,17 @@ background:rgba(79,140,255,.10);
 
     text-align:center;
 
-    color:#9cb7e5;
+    color:#8fb5ff;
 
     font-size:15px;
 
+    letter-spacing:.5px;
+
 }
 
-/*=========================================
+/*=================================================
         QUOTE ICON
-=========================================*/
+==================================================*/
 
 .review-card::before{
 
@@ -5831,11 +5920,11 @@ background:rgba(79,140,255,.10);
 
     position:absolute;
 
-    top:25px;
+    right:28px;
 
-    right:30px;
+    top:15px;
 
-    font-size:120px;
+    font-size:130px;
 
     color:rgba(79,140,255,.08);
 
@@ -5844,29 +5933,161 @@ background:rgba(79,140,255,.10);
     pointer-events:none;
 
 }
-/*=========================================
+
+/*=================================================
+        SHINE EFFECT
+==================================================*/
+
+.review-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:70%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.14),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    transition:1s;
+
+}
+
+.review-card:hover::after{
+
+    left:170%;
+
+}
+/*=================================================
+        MOUSE GLOW
+==================================================*/
+
+.review-card{
+
+    --mouse-x:50%;
+    --mouse-y:50%;
+
+}
+
+.review-card .card-glow{
+
+    position:absolute;
+
+    width:280px;
+    height:280px;
+
+    left:var(--mouse-x);
+    top:var(--mouse-y);
+
+    transform:translate(-50%,-50%);
+
+    background:radial-gradient(circle,
+        rgba(79,140,255,.22),
+        transparent 70%);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity .35s;
+
+    z-index:0;
+
+}
+
+.review-card:hover .card-glow{
+
+    opacity:1;
+
+}
+
+/*=================================================
+        FLOATING ANIMATION
+==================================================*/
+
+.review-card{
+
+    animation:reviewFloat 6s ease-in-out infinite;
+
+}
+
+.review-card:nth-child(2){
+
+    animation-delay:.3s;
+
+}
+
+.review-card:nth-child(3){
+
+    animation-delay:.6s;
+
+}
+
+.review-card:nth-child(4){
+
+    animation-delay:.9s;
+
+}
+
+.review-card:nth-child(5){
+
+    animation-delay:1.2s;
+
+}
+
+@keyframes reviewFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+/*=================================================
         NAVIGATION BUTTONS
-=========================================*/
+==================================================*/
 
 .carousel-btn{
 
-    width:60px;
-
-    height:60px;
-
-    border:none;
+    width:65px;
+    height:65px;
 
     border-radius:50%;
 
-    background:rgba(255,255,255,.06);
-
-    backdrop-filter:blur(15px);
-
     border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
 
     color:#fff;
 
-    font-size:30px;
+    font-size:28px;
 
     cursor:pointer;
 
@@ -5878,16 +6099,21 @@ background:rgba(79,140,255,.10);
 
 .carousel-btn:hover{
 
-    background:#4f8cff;
-
     transform:scale(1.12);
 
-    box-shadow:0 0 30px rgba(79,140,255,.45);
+    background:#4f8cff;
+
+    border-color:#4f8cff;
+
+    box-shadow:
+
+    0 0 35px rgba(79,140,255,.45);
 
 }
-/*=========================================
+
+/*=================================================
         DOTS
-=========================================*/
+==================================================*/
 
 .carousel-dots{
 
@@ -5897,19 +6123,18 @@ background:rgba(79,140,255,.10);
 
     gap:14px;
 
-    margin-top:45px;
+    margin-top:40px;
 
 }
 
 .dot{
 
     width:12px;
-
     height:12px;
 
     border-radius:50%;
 
-    background:#5d6d88;
+    background:#5f6f90;
 
     cursor:pointer;
 
@@ -5919,49 +6144,153 @@ background:rgba(79,140,255,.10);
 
 .dot.active{
 
-    width:34px;
+    width:36px;
 
     border-radius:30px;
 
     background:#4f8cff;
 
-    box-shadow:0 0 20px rgba(79,140,255,.6);
+    box-shadow:
+
+    0 0 20px rgba(79,140,255,.55);
 
 }
-/*=========================================
-        MOUSE GLOW
-=========================================*/
 
-.review-card::after{
+/*=================================================
+        RESPONSIVE
+==================================================*/
 
-    content:"";
+@media(max-width:1200px){
 
-    position:absolute;
+.review-card{
 
-    width:300px;
+    width:340px;
 
-    height:300px;
+}
 
-    left:var(--mouse-x,50%);
+.review-card.left{
 
-    top:var(--mouse-y,50%);
+    transform:
 
-    transform:translate(-50%,-50%);
+    translateX(-300px)
 
-    background:radial-gradient(circle,
-        rgba(79,140,255,.18),
-        transparent 70%);
+    rotateY(30deg)
+
+    scale(.82);
+
+}
+
+.review-card.right{
+
+    transform:
+
+    translateX(300px)
+
+    rotateY(-30deg)
+
+    scale(.82);
+
+}
+
+}
+
+@media(max-width:992px){
+
+.carousel-wrapper{
+
+    height:520px;
+
+}
+
+.review-card{
+
+    width:320px;
+
+    padding:35px;
+
+}
+
+.carousel-btn{
+
+    width:55px;
+    height:55px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.testimonials{
+
+    padding:90px 6%;
+
+}
+
+.review-card{
+
+    width:95%;
+
+    max-width:360px;
+
+}
+
+.review-card.left,
+.review-card.right{
 
     opacity:0;
-
-    transition:.35s;
 
     pointer-events:none;
 
 }
 
-.review-card:hover::after{
+.review-card.active{
 
-    opacity:1;
+    transform:
+
+    scale(1);
+
+}
+
+.review-avatar img{
+
+    width:80px;
+    height:80px;
+
+}
+
+.review-card h3{
+
+    font-size:22px;
+
+}
+
+.review-stars{
+
+    font-size:22px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.carousel-btn{
+
+    display:none;
+
+}
+
+.review-card{
+
+    padding:28px;
+
+}
+
+.review-card p{
+
+    font-size:15px;
+
+}
 
 }
