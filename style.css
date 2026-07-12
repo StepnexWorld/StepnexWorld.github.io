@@ -3774,3 +3774,97 @@ background:rgba(79,140,255,.10);
     box-shadow:0 30px 70px rgba(79,140,255,.20);
 
 }
+
+/*=========================
+      IMAGE
+=========================*/
+
+.portfolio-image{
+
+    position:relative;
+
+    overflow:hidden;
+
+    height:260px;
+
+}
+
+.portfolio-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.6s ease;
+
+}
+
+.portfolio-card:hover .portfolio-image img{
+
+    transform:scale(1.12);
+
+}
+
+/*=========================
+      OVERLAY
+=========================*/
+
+.portfolio-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+        rgba(5,12,30,.15),
+        rgba(5,12,30,.90)
+    );
+
+    opacity:0;
+
+    transition:.45s ease;
+
+}
+
+.portfolio-card:hover .portfolio-overlay{
+
+    opacity:1;
+
+}
+
+/*=========================
+      VIEW BUTTON
+=========================*/
+
+.view-btn{
+
+    padding:14px 30px;
+
+    border-radius:50px;
+
+    background:#4f8cff;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.view-btn:hover{
+
+    background:#2563eb;
+
+    transform:translateY(-4px);
+
+}
