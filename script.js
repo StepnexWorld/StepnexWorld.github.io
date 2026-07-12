@@ -245,3 +245,20 @@ navItems.forEach(link=>{
     });
 
 });
+/*=========================
+ Hero Mouse Effect
+==========================*/
+
+const imageCard = document.querySelector(".image-card");
+
+document.addEventListener("mousemove",(e)=>{
+
+    if(!imageCard) return;
+
+    const x = (window.innerWidth/2 - e.clientX)/40;
+    const y = (window.innerHeight/2 - e.clientY)/40;
+
+    imageCard.style.transform =
+    `rotateY(${x}deg) rotateX(${-y}deg)`;
+
+});
