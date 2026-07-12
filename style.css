@@ -4497,3 +4497,324 @@ background:rgba(79,140,255,.10);
 }
 
 }
+/*=========================================
+          ACHIEVEMENTS SECTION
+=========================================*/
+
+.achievements{
+    position:relative;
+    padding:120px 8%;
+    overflow:hidden;
+}
+
+.achievement-grid{
+
+    max-width:1300px;
+    margin:70px auto 0;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+/*=========================================
+          ACHIEVEMENT CARD
+=========================================*/
+
+.achievement-card{
+
+    position:relative;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:28px;
+
+    padding:45px 25px;
+
+    text-align:center;
+
+    transition:.4s ease;
+
+    overflow:hidden;
+
+}
+
+.achievement-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:#4f8cff;
+
+    box-shadow:0 25px 60px rgba(79,140,255,.20);
+
+}
+
+/* Icon */
+
+.achievement-card i{
+
+    font-size:55px;
+
+    color:#4f8cff;
+
+    margin-bottom:25px;
+
+    transition:.4s;
+
+}
+
+.achievement-card:hover i{
+
+    transform:scale(1.15) rotate(-8deg);
+
+}
+/*=========================================
+        ACHIEVEMENT CONTENT
+=========================================*/
+
+.achievement-card h3{
+
+    font-size:56px;
+
+    font-weight:800;
+
+    color:#fff;
+
+    margin-bottom:12px;
+
+    line-height:1;
+
+    transition:.35s ease;
+
+}
+
+.achievement-card:hover h3{
+
+    color:#4f8cff;
+
+}
+
+.achievement-card span{
+
+    display:block;
+
+    font-size:18px;
+
+    color:#cbd5e1;
+
+    font-weight:500;
+
+    letter-spacing:.5px;
+
+}
+
+/*=========================================
+        BOTTOM GLOW LINE
+=========================================*/
+
+.achievement-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:0;
+
+    width:0;
+
+    height:4px;
+
+    background:linear-gradient(90deg,#4f8cff,#2563eb);
+
+    transform:translateX(-50%);
+
+    transition:.4s ease;
+
+    border-radius:20px;
+
+}
+
+.achievement-card:hover::after{
+
+    width:100%;
+
+}
+
+/*=========================================
+        TOP GLOW
+=========================================*/
+
+.achievement-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    top:-90px;
+
+    right:-90px;
+
+    background:#4f8cff;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    opacity:0;
+
+    transition:.4s ease;
+
+}
+
+.achievement-card:hover::before{
+
+    opacity:.18;
+
+}
+/*=========================================
+        ACHIEVEMENTS FINAL
+=========================================*/
+
+/* Background Glow */
+
+.achievements::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:550px;
+    height:550px;
+
+    background:#4f8cff;
+
+    border-radius:50%;
+
+    left:-220px;
+    bottom:-220px;
+
+    filter:blur(180px);
+
+    opacity:.10;
+
+    z-index:-1;
+
+}
+
+/* Floating Animation */
+
+.achievement-card{
+
+    animation:achievementFloat 6s ease-in-out infinite;
+
+}
+
+.achievement-card:nth-child(2){
+
+    animation-delay:.3s;
+
+}
+
+.achievement-card:nth-child(3){
+
+    animation-delay:.6s;
+
+}
+
+.achievement-card:nth-child(4){
+
+    animation-delay:.9s;
+
+}
+
+@keyframes achievementFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Better Hover */
+
+.achievement-card:hover{
+
+    transform:translateY(-15px) scale(1.03);
+
+}
+
+/*=========================================
+        RESPONSIVE
+=========================================*/
+
+@media(max-width:1100px){
+
+.achievement-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.achievements{
+
+    padding:90px 6%;
+
+}
+
+.achievement-grid{
+
+    grid-template-columns:1fr;
+
+    gap:25px;
+
+}
+
+.achievement-card{
+
+    padding:35px 25px;
+
+}
+
+.achievement-card h3{
+
+    font-size:46px;
+
+}
+
+.achievement-card span{
+
+    font-size:16px;
+
+}
+
+}
