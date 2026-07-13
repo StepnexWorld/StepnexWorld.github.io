@@ -5495,3 +5495,176 @@ background:rgba(79,140,255,.10);
 
 }
 
+/*=================================================
+            PREMIUM PRELOADER
+==================================================*/
+
+#preloader{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#050816;
+
+    z-index:999999;
+
+    overflow:hidden;
+
+    transition:opacity .8s ease,
+               visibility .8s ease;
+
+}
+
+#preloader.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+/*====================================*/
+
+.preloader-content{
+
+    position:relative;
+
+    width:360px;
+
+    padding:55px 40px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35);
+
+}
+
+/*====================================*/
+
+.preloader-content::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    top:-120px;
+
+    left:-120px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+        rgba(79,140,255,.20),
+        transparent 70%);
+
+    filter:blur(80px);
+
+}
+
+.preloader-content::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    right:-100px;
+
+    bottom:-100px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+        rgba(0,212,255,.18),
+        transparent 70%);
+
+    filter:blur(80px);
+
+}
+
+/*====================================*/
+
+.loader-circle{
+
+    width:90px;
+
+    height:90px;
+
+    margin:0 auto 30px;
+
+    border-radius:50%;
+
+    border:5px solid rgba(255,255,255,.08);
+
+    border-top-color:#4f8cff;
+
+    animation:loaderSpin 1s linear infinite;
+
+}
+
+@keyframes loaderSpin{
+
+    100%{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/*====================================*/
+
+.loader-title{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:#fff;
+
+    margin-bottom:12px;
+
+    letter-spacing:2px;
+
+}
+
+.loader-title span{
+
+    color:#4f8cff;
+
+}
+
+.preloader-content p{
+
+    color:#b8c8e8;
+
+    font-size:16px;
+
+    margin-bottom:28px;
+
+}
