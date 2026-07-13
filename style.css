@@ -3303,7 +3303,7 @@ background:rgba(79,140,255,.10);
             EXPERIENCE CARDS
 ==================================================*/
 
-
+.experience-card{
 
     position:relative;
 
@@ -3326,18 +3326,6 @@ background:rgba(79,140,255,.10);
         box-shadow .4s ease;
 
 }
-
-.experience-card:hover{
-
-    transform:translateY(-12px);
-
-    border-color:#4f8cff;
-
-    box-shadow:
-        0 30px 70px rgba(79,140,255,.25);
-
-}
-
 /*====================================
             YEAR
 =====================================*/
