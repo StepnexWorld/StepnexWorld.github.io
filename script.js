@@ -693,3 +693,24 @@ contactElements.forEach(item => {
     });
 
 });
+/*=========================================
+        LUXURY SPLASH SCREEN
+=========================================*/
+
+const splash = document.getElementById("splash");
+
+if (splash) {
+
+    setTimeout(() => {
+
+        splash.classList.add("hide");
+
+        setTimeout(() => {
+
+            splash.remove();
+
+        }, 800);
+
+    }, 1000);
+
+}
