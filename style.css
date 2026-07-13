@@ -3450,6 +3450,84 @@ background:rgba(79,140,255,.10);
 
 }
 /*=================================================
+        EXPERIENCE RESPONSIVE
+==================================================*/
+
+@media(max-width:900px){
+
+.experience-wrapper{
+
+    grid-template-columns:1fr;
+
+    gap:40px;
+
+}
+
+.experience-wrapper::before{
+
+    left:20px;
+
+}
+
+.timeline-dot{
+
+    display:none;
+
+}
+
+.experience-item.left,
+.experience-item.right{
+
+    grid-column:1;
+
+    padding-left:55px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.experience{
+
+    padding:90px 6%;
+
+}
+
+.experience-card{
+
+    padding:25px;
+
+}
+
+.experience-card h3{
+
+    font-size:24px;
+
+}
+
+.experience-card h4{
+
+    font-size:16px;
+
+}
+
+.exp-tags{
+
+    gap:8px;
+
+}
+
+.exp-tags span{
+
+    font-size:13px;
+
+    padding:8px 14px;
+
+}
+
+}
+/*=================================================
         PREMIUM 3D TESTIMONIALS
 ==================================================*/
 
