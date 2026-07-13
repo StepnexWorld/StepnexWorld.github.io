@@ -5668,3 +5668,162 @@ background:rgba(79,140,255,.10);
     margin-bottom:28px;
 
 }
+/*=================================================
+        PRELOADER PROGRESS BAR
+==================================================*/
+
+.loader-progress{
+
+    width:100%;
+    height:8px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.loader-fill{
+
+    width:0;
+
+    height:100%;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        90deg,
+        #4f8cff,
+        #00d4ff,
+        #4f8cff
+    );
+
+    background-size:200% 100%;
+
+    animation:
+        progressFill 1.4s ease forwards,
+        progressGlow 2s linear infinite;
+
+}
+
+@keyframes progressFill{
+
+    from{
+
+        width:0%;
+
+    }
+
+    to{
+
+        width:100%;
+
+    }
+
+}
+
+@keyframes progressGlow{
+
+    from{
+
+        background-position:0%;
+
+    }
+
+    to{
+
+        background-position:200%;
+
+    }
+
+}
+
+/*=================================================
+        FLOATING EFFECT
+==================================================*/
+
+.preloader-content{
+
+    animation:loaderFloat 3.5s ease-in-out infinite;
+
+}
+
+@keyframes loaderFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+.loader-title{
+
+    animation:titleGlow 2s ease-in-out infinite;
+
+}
+
+@keyframes titleGlow{
+
+    0%,100%{
+
+        text-shadow:
+        0 0 8px rgba(79,140,255,.20);
+
+    }
+
+    50%{
+
+        text-shadow:
+        0 0 30px rgba(79,140,255,.70);
+
+    }
+
+}
+
+/*=================================================
+        MOBILE
+==================================================*/
+
+@media(max-width:768px){
+
+.preloader-content{
+
+    width:90%;
+
+    max-width:340px;
+
+    padding:45px 30px;
+
+}
+
+.loader-circle{
+
+    width:75px;
+
+    height:75px;
+
+}
+
+.loader-title{
+
+    font-size:34px;
+
+}
+
+.preloader-content p{
+
+    font-size:15px;
+
+}
+
+}
