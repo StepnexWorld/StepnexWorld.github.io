@@ -1322,13 +1322,7 @@ background:rgba(79,140,255,.10);
 
 }
 
-.experience-card{
 
-    top:30px;
-
-    right:-20px;
-
-}
 
 .client-card{
 
@@ -5467,31 +5461,7 @@ opacity:0;
         CURRENT BADGE
 =========================================*/
 
-.current-badge{
 
-    position:absolute;
-
-    top:-18px;
-
-    right:30px;
-
-    padding:8px 18px;
-
-    border-radius:50px;
-
-    background:linear-gradient(135deg,#4f8cff,#2f67ff);
-
-    color:#fff;
-
-    font-size:13px;
-
-    font-weight:600;
-
-    letter-spacing:1px;
-
-    box-shadow:0 10px 25px rgba(79,140,255,.35);
-
-}
 
 /* Hover */
 
