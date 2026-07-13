@@ -1329,11 +1329,6 @@ background:rgba(79,140,255,.10);
     right:-20px;
 
 }
-.experience-card{
-
-    min-height:420px;
-
-}
 
 .client-card{
 
@@ -3216,7 +3211,7 @@ background:rgba(79,140,255,.10);
 
     position:relative;
 
-    max-width:1400px;
+    max-width:1200px;
 
     margin:80px auto 0;
 
