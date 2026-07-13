@@ -1261,9 +1261,9 @@ background:rgba(79,140,255,.10);
 
 .about-image-box img{
 
-    width:90%;
+    width:88%;
 
-    height:90%;
+    height:88%;
 
     object-fit:cover;
 
@@ -1322,7 +1322,13 @@ background:rgba(79,140,255,.10);
 
 }
 
+.experience-card{
 
+    top:30px;
+
+    right:-20px;
+
+}
 
 .client-card{
 
@@ -1639,9 +1645,9 @@ background:rgba(79,140,255,.10);
 
 .about-image-box{
 
-    width:500px;
+    width:300px;
 
-    height:500px;
+    height:300px;
 
 }
 
