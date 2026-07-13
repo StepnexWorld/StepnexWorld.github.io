@@ -693,3 +693,66 @@ contactElements.forEach(item => {
     });
 
 });
+/*=========================================
+        CUSTOM CURSOR
+=========================================*/
+
+const cursorDot = document.querySelector(".cursor-dot");
+const cursorOutline = document.querySelector(".cursor-outline");
+
+if (cursorDot && cursorOutline) {
+
+    let mouseX = 0;
+    let mouseY = 0;
+
+    let outlineX = 0;
+    let outlineY = 0;
+
+    // Mouse Position
+    document.addEventListener("mousemove", (e) => {
+
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        cursorDot.style.left = mouseX + "px";
+        cursorDot.style.top = mouseY + "px";
+
+    });
+
+    // Smooth Outline Animation
+    function animateCursor() {
+
+        outlineX += (mouseX - outlineX) * 0.15;
+        outlineY += (mouseY - outlineY) * 0.15;
+
+        cursorOutline.style.left = outlineX + "px";
+        cursorOutline.style.top = outlineY + "px";
+
+        requestAnimationFrame(animateCursor);
+
+    }
+
+    animateCursor();
+
+    // Hover Effect
+    const hoverItems = document.querySelectorAll(
+        "a, button, .btn, .service-card, .project-card, .review-card, .contact-card"
+    );
+
+    hoverItems.forEach(item => {
+
+        item.addEventListener("mouseenter", () => {
+
+            cursorOutline.classList.add("hover");
+
+        });
+
+        item.addEventListener("mouseleave", () => {
+
+            cursorOutline.classList.remove("hover");
+
+        });
+
+    });
+
+}
