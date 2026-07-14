@@ -4595,3 +4595,105 @@ background:rgba(79,140,255,.10);
     box-shadow:0 0 15px rgba(79,140,255,.6);
 
 }
+/*=========================================
+        FOOTER PREMIUM POLISH
+=========================================*/
+
+/* Better Footer Background */
+.footer{
+
+    background:linear-gradient(180deg,#08111f 0%,#0b1630 100%);
+    border-top:1px solid rgba(79,140,255,.25);
+
+}
+
+/* Premium Logo */
+
+.footer-logo{
+
+    font-size:42px;
+    font-weight:800;
+    letter-spacing:2px;
+
+}
+
+.footer-logo span{
+
+    color:#4f8cff;
+
+}
+
+/* Better Social Hover */
+
+.footer-social a{
+
+    transition:.35s ease;
+
+}
+
+.footer-social a:hover{
+
+    transform:translateY(-10px) scale(1.08);
+
+    background:#4f8cff;
+
+    border-color:#4f8cff;
+
+    box-shadow:0 0 25px rgba(79,140,255,.55);
+
+}
+
+/* Footer Links Hover */
+
+.footer-column ul li a{
+
+    transition:.35s ease;
+
+}
+
+.footer-column ul li a:hover{
+
+    color:#67b2ff;
+
+    padding-left:8px;
+
+}
+
+/* Contact Icons */
+
+.footer-column li i{
+
+    color:#4f8cff;
+
+    width:22px;
+
+    text-align:center;
+
+}
+
+/* Footer Bottom */
+
+.footer-bottom{
+
+    text-align:center;
+
+    justify-content:center;
+
+}
+
+.footer-bottom p{
+
+    color:#b7c9ef;
+
+    font-size:15px;
+
+}
+
+.footer-bottom strong,
+.footer-bottom span{
+
+    color:#4f8cff;
+
+    font-weight:700;
+
+}
