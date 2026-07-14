@@ -395,283 +395,205 @@ document.querySelectorAll(".timeline-item").forEach(item=>{
 
 });
 /*=========================================
-    3D TESTIMONIAL CAROUSEL
+        TESTIMONIALS V5
 =========================================*/
 
 const reviewCards = document.querySelectorAll(".review-card");
-const dots = document.querySelectorAll(".dot");
-const nextBtn = document.querySelector(".next");
-const prevBtn = document.querySelector(".prev");
-const carousel = document.querySelector(".testimonial-carousel");
+const prevBtn = document.querySelector(".review-prev");
+const nextBtn = document.querySelector(".review-next");
+const dots = document.querySelectorAll(".review-pagination span");
 
 let current = 0;
-let autoPlay = null;
+let autoPlay;
 
-/*=========================================
-    UPDATE CAROUSEL
-=========================================*/
+/*-----------------------------
+    Update Cards
+------------------------------*/
 
-function updateCarousel() {
+function updateReviews() {
 
-    reviewCards.forEach((card, index) => {
-
+    reviewCards.forEach(card => {
         card.classList.remove(
-            "active",
-            "left",
-            "right",
-            "hidden"
+            "review-active",
+            "review-left",
+            "review-right",
+            "review-hidden"
         );
+    });
 
-        if (index === current) {
+    const total = reviewCards.length;
 
-            card.classList.add("active");
+    const left =
+        (current - 1 + total) % total;
 
-        } else if (index === (current - 1 + reviewCards.length) % reviewCards.length) {
+    const right =
+        (current + 1) % total;
 
-            card.classList.add("left");
+    reviewCards[current].classList.add("review-active");
+    reviewCards[left].classList.add("review-left");
+    reviewCards[right].classList.add("review-right");
 
-        } else if (index === (current + 1) % reviewCards.length) {
+    reviewCards.forEach((card,index)=>{
 
-            card.classList.add("right");
-
-        } else {
-
-            card.classList.add("hidden");
-
+        if(
+            index!==current &&
+            index!==left &&
+            index!==right
+        ){
+            card.classList.add("review-hidden");
         }
 
     });
 
-    dots.forEach((dot, index) => {
-
-        dot.classList.toggle("active", index === current);
-
-    });
+    dots.forEach(dot=>dot.classList.remove("active"));
+    dots[current].classList.add("active");
 
 }
 
-/*=========================================
-    NEXT
-=========================================*/
+/*-----------------------------
+        Next
+------------------------------*/
 
-function nextSlide() {
+function nextReview(){
 
     current++;
 
-    if (current >= reviewCards.length) {
+    if(current>=reviewCards.length){
 
-        current = 0;
+        current=0;
 
     }
 
-    updateCarousel();
+    updateReviews();
 
 }
 
-/*=========================================
-    PREVIOUS
-=========================================*/
+/*-----------------------------
+        Previous
+------------------------------*/
 
-function prevSlide() {
+function prevReview(){
 
     current--;
 
-    if (current < 0) {
+    if(current<0){
 
-        current = reviewCards.length - 1;
-
-    }
-
-    updateCarousel();
-
-}
-
-/*=========================================
-    AUTOPLAY
-=========================================*/
-
-function startAutoPlay() {
-
-    stopAutoPlay();
-
-    autoPlay = setInterval(() => {
-
-        nextSlide();
-
-    }, 4000);
-
-}
-
-function stopAutoPlay() {
-
-    if (autoPlay) {
-
-        clearInterval(autoPlay);
+        current=reviewCards.length-1;
 
     }
 
-}
-
-/*=========================================
-    BUTTON EVENTS
-=========================================*/
-
-if (nextBtn) {
-
-    nextBtn.addEventListener("click", () => {
-
-        nextSlide();
-
-        startAutoPlay();
-
-    });
+    updateReviews();
 
 }
 
-if (prevBtn) {
+/*-----------------------------
+        Buttons
+------------------------------*/
 
-    prevBtn.addEventListener("click", () => {
+nextBtn.addEventListener("click",nextReview);
 
-        prevSlide();
+prevBtn.addEventListener("click",prevReview);
 
-        startAutoPlay();
+/*-----------------------------
+        Dots
+------------------------------*/
 
-    });
+dots.forEach((dot,index)=>{
 
-}
+    dot.addEventListener("click",()=>{
 
-/*=========================================
-    DOT EVENTS
-=========================================*/
+        current=index;
 
-dots.forEach((dot, index) => {
-
-    dot.addEventListener("click", () => {
-
-        current = index;
-
-        updateCarousel();
-
-        startAutoPlay();
+        updateReviews();
 
     });
 
 });
 
-/*=========================================
-    PAUSE ON HOVER
-=========================================*/
+/*-----------------------------
+        Auto Play
+------------------------------*/
 
-if (carousel) {
+function startAuto(){
 
-    carousel.addEventListener("mouseenter", stopAutoPlay);
-
-    carousel.addEventListener("mouseleave", startAutoPlay);
+    autoPlay=setInterval(nextReview,5000);
 
 }
 
-/*=========================================
-    MOUSE GLOW
-=========================================*/
+function stopAuto(){
 
-reviewCards.forEach(card => {
+    clearInterval(autoPlay);
 
-    card.addEventListener("mousemove", (e) => {
+}
 
-        const rect = card.getBoundingClientRect();
+/*-----------------------------
+        Pause Hover
+------------------------------*/
 
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+const container=document.querySelector(".reviews-container");
 
-        card.style.setProperty("--mouse-x", x + "px");
-        card.style.setProperty("--mouse-y", y + "px");
+container.addEventListener("mouseenter",stopAuto);
 
-    });
+container.addEventListener("mouseleave",startAuto);
+
+/*-----------------------------
+        Keyboard
+------------------------------*/
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key==="ArrowRight"){
+
+        nextReview();
+
+    }
+
+    if(e.key==="ArrowLeft"){
+
+        prevReview();
+
+    }
 
 });
 
-/*=========================================
-    DRAG / SWIPE SUPPORT
-=========================================*/
+/*-----------------------------
+        Mobile Swipe
+------------------------------*/
 
-let startX = 0;
-let endX = 0;
+let startX=0;
+let endX=0;
 
-if (carousel) {
+container.addEventListener("touchstart",(e)=>{
 
-    carousel.addEventListener("touchstart", (e) => {
+    startX=e.touches[0].clientX;
 
-        startX = e.touches[0].clientX;
+});
 
-    });
+container.addEventListener("touchend",(e)=>{
 
-    carousel.addEventListener("touchend", (e) => {
+    endX=e.changedTouches[0].clientX;
 
-        endX = e.changedTouches[0].clientX;
+    if(startX-endX>60){
 
-        if (startX - endX > 50) {
+        nextReview();
 
-            nextSlide();
-            startAutoPlay();
+    }
 
-        }
+    if(endX-startX>60){
 
-        if (endX - startX > 50) {
+        prevReview();
 
-            prevSlide();
-            startAutoPlay();
+    }
 
-        }
+});
 
-    });
+/*-----------------------------
+        Init
+------------------------------*/
 
-    let isDragging = false;
+updateReviews();
 
-    carousel.addEventListener("mousedown", (e) => {
-
-        isDragging = true;
-
-        startX = e.clientX;
-
-    });
-
-    window.addEventListener("mouseup", (e) => {
-
-        if (!isDragging) return;
-
-        isDragging = false;
-
-        endX = e.clientX;
-
-        if (startX - endX > 80) {
-
-            nextSlide();
-            startAutoPlay();
-
-        }
-
-        if (endX - startX > 80) {
-
-            prevSlide();
-            startAutoPlay();
-
-        }
-
-    });
-
-}
-
-/*=========================================
-    INIT
-=========================================*/
-
-if (reviewCards.length > 0) {
-
-    updateCarousel();
-
-    startAutoPlay();
-
-}
+startAuto();
 /*=========================================
       CONTACT MOUSE GLOW
 =========================================*/
