@@ -756,3 +756,167 @@ if (cursorDot && cursorOutline) {
     });
 
 }
+/*=========================================
+        TESTIMONIALS V3
+=========================================*/
+
+const track = document.querySelector(".testimonial-track");
+const cards = document.querySelectorAll(".testimonial-card");
+const dots = document.querySelectorAll(".testimonial-dots .dot");
+const nextBtn = document.querySelector(".testimonial-btn.next");
+const prevBtn = document.querySelector(".testimonial-btn.prev");
+
+let current = 0;
+let autoSlide;
+
+/*--------------------------
+    Update Slider
+---------------------------*/
+
+function updateSlider(){
+
+    cards.forEach((card,index)=>{
+
+        card.style.display="none";
+        card.classList.remove("active");
+
+    });
+
+    cards[current].style.display="block";
+    cards[current].classList.add("active");
+
+    dots.forEach(dot=>dot.classList.remove("active"));
+    dots[current].classList.add("active");
+
+}
+
+/*--------------------------
+    Next
+---------------------------*/
+
+function nextSlide(){
+
+    current++;
+
+    if(current>=cards.length){
+
+        current=0;
+
+    }
+
+    updateSlider();
+
+}
+
+/*--------------------------
+    Previous
+---------------------------*/
+
+function prevSlide(){
+
+    current--;
+
+    if(current<0){
+
+        current=cards.length-1;
+
+    }
+
+    updateSlider();
+
+}
+
+/*--------------------------
+    Auto Slide
+---------------------------*/
+
+function startAuto(){
+
+    autoSlide=setInterval(nextSlide,5000);
+
+}
+
+function stopAuto(){
+
+    clearInterval(autoSlide);
+
+}
+
+/*--------------------------
+    Buttons
+---------------------------*/
+
+nextBtn.addEventListener("click",()=>{
+
+    nextSlide();
+
+});
+
+prevBtn.addEventListener("click",()=>{
+
+    prevSlide();
+
+});
+
+/*--------------------------
+    Dots
+---------------------------*/
+
+dots.forEach((dot,index)=>{
+
+    dot.addEventListener("click",()=>{
+
+        current=index;
+
+        updateSlider();
+
+    });
+
+});
+
+/*--------------------------
+    Pause On Hover
+---------------------------*/
+
+track.addEventListener("mouseenter",stopAuto);
+
+track.addEventListener("mouseleave",startAuto);
+
+/*--------------------------
+    Touch Swipe
+---------------------------*/
+
+let startX=0;
+let endX=0;
+
+track.addEventListener("touchstart",(e)=>{
+
+    startX=e.touches[0].clientX;
+
+});
+
+track.addEventListener("touchend",(e)=>{
+
+    endX=e.changedTouches[0].clientX;
+
+    if(startX-endX>60){
+
+        nextSlide();
+
+    }
+
+    if(endX-startX>60){
+
+        prevSlide();
+
+    }
+
+});
+
+/*--------------------------
+    Init
+---------------------------*/
+
+updateSlider();
+
+startAuto();
