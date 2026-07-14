@@ -3528,10 +3528,10 @@ background:rgba(79,140,255,.10);
 
 }
 /*=================================================
-            TESTIMONIALS V5 FINAL
+            TESTIMONIALS FINAL
 ==================================================*/
 
-.reviews-v5{
+.testimonials{
 
     position:relative;
 
@@ -3541,180 +3541,53 @@ background:rgba(79,140,255,.10);
 
 }
 
-.reviews-container{
+.testimonial-grid{
 
-    position:relative;
+    max-width:1300px;
 
-    max-width:1400px;
+    margin:70px auto 0;
 
-    margin:80px auto 0;
+    display:grid;
 
-    display:flex;
+    grid-template-columns:repeat(3,1fr);
 
-    align-items:center;
-
-    justify-content:center;
-
-    gap:35px;
+    gap:30px;
 
 }
 
-.reviews-track{
+.testimonial-card{
 
     position:relative;
 
-    width:100%;
+    padding:40px 35px;
 
-    height:480px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    perspective:1800px;
-
-    overflow:hidden;
-
-}
-
-/*==============================
-        REVIEW CARD
-===============================*/
-
-.review-card{
-
-    position:absolute;
-
-    width:390px;
-
-    min-height:360px;
-
-    padding:40px;
-
-    border-radius:30px;
+    border-radius:28px;
 
     background:rgba(255,255,255,.05);
 
-    backdrop-filter:blur(20px);
-
     border:1px solid rgba(255,255,255,.08);
 
+    backdrop-filter:blur(20px);
+
     box-shadow:
-        0 20px 60px rgba(0,0,0,.25);
+        0 20px 50px rgba(0,0,0,.25);
 
-    transition:
-        transform .7s ease,
-        opacity .7s ease,
-        filter .7s ease;
-
-    opacity:0;
-
-    pointer-events:none;
+    transition:.4s ease;
 
 }
 
-/*==============================
-        CENTER CARD
-===============================*/
+.testimonial-card:hover{
 
-.review-active{
+    transform:translateY(-12px);
 
-    opacity:1;
+    border-color:#4f8cff;
 
-    transform:
-        translateX(0)
-        scale(1.08);
-
-    filter:none;
-
-    z-index:10;
-
-    pointer-events:auto;
+    box-shadow:
+        0 30px 70px rgba(79,140,255,.25);
 
 }
 
-/*==============================
-        LEFT CARD
-===============================*/
-
-.review-left{
-
-    opacity:.55;
-
-    transform:
-        translateX(-320px)
-        rotateY(25deg)
-        scale(.88);
-
-    filter:blur(1px);
-
-    z-index:5;
-
-}
-
-/*==============================
-        RIGHT CARD
-===============================*/
-
-.review-right{
-
-    opacity:.55;
-
-    transform:
-        translateX(320px)
-        rotateY(-25deg)
-        scale(.88);
-
-    filter:blur(1px);
-
-    z-index:5;
-
-}
-
-/*==============================
-        HIDDEN
-===============================*/
-
-.review-hidden{
-
-    opacity:0;
-
-    transform:scale(.75);
-
-    filter:blur(8px);
-
-}
-
-/*==============================
-        HOVER
-===============================*/
-
-.review-active:hover{
-
-    transform:
-        translateY(-12px)
-        scale(1.10);
-
-}
-/*=================================================
-            REVIEW CONTENT
-==================================================*/
-
-.review-quote{
-
-    font-size:70px;
-
-    color:#4f8cff;
-
-    line-height:1;
-
-    margin-bottom:20px;
-
-}
-
-.review-stars{
+.stars{
 
     color:#FFD54A;
 
@@ -3722,29 +3595,23 @@ background:rgba(79,140,255,.10);
 
     letter-spacing:4px;
 
-    margin-bottom:25px;
+    margin-bottom:22px;
 
 }
 
-.review-card p{
+.testimonial-card p{
 
     color:#d8e4ff;
 
-    font-size:17px;
-
     line-height:1.9;
 
-    margin-bottom:35px;
+    font-size:17px;
+
+    margin-bottom:30px;
 
 }
 
-.review-client{
-
-    margin-top:auto;
-
-}
-
-.review-client h3{
+.testimonial-card h3{
 
     color:#fff;
 
@@ -3752,181 +3619,105 @@ background:rgba(79,140,255,.10);
 
     margin-bottom:8px;
 
-    font-weight:700;
-
 }
 
-.review-client span{
+.testimonial-card span{
 
     color:#8fb8ff;
 
     font-size:15px;
 
 }
-
 /*=================================================
-            NAVIGATION BUTTONS
+        TESTIMONIALS FINAL EFFECTS
 ==================================================*/
 
-.review-nav{
-
-    width:65px;
-
-    height:65px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.06);
-
-    border:1px solid rgba(255,255,255,.10);
-
-    backdrop-filter:blur(20px);
-
-    color:#fff;
-
-    font-size:30px;
-
-    cursor:pointer;
-
-    transition:.35s ease;
-
-}
-
-.review-nav:hover{
-
-    background:#4f8cff;
-
-    border-color:#4f8cff;
-
-    transform:scale(1.1);
-
-    box-shadow:0 15px 40px rgba(79,140,255,.35);
-
-}
-
-/*=================================================
-            PAGINATION
-==================================================*/
-
-.review-pagination{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:14px;
-
-    margin-top:55px;
-
-}
-
-.review-pagination span{
-
-    width:14px;
-
-    height:14px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.25);
-
-    cursor:pointer;
-
-    transition:.35s ease;
-
-}
-
-.review-pagination span.active{
-
-    width:42px;
-
-    border-radius:50px;
-
-    background:#4f8cff;
-
-    box-shadow:0 0 20px rgba(79,140,255,.6);
-
-}
-
-/*=================================================
-            BACKGROUND GLOW
-==================================================*/
-
-.reviews-v5::before{
+.testimonials::before{
 
     content:"";
 
     position:absolute;
 
-    width:520px;
-
-    height:520px;
+    width:500px;
+    height:500px;
 
     top:-180px;
-
     right:-180px;
 
-    border-radius:50%;
-
     background:#4f8cff;
+
+    border-radius:50%;
 
     filter:blur(180px);
 
     opacity:.18;
 
+    z-index:-1;
+
 }
 
-.reviews-v5::after{
+.testimonials::after{
 
     content:"";
 
     position:absolute;
 
     width:420px;
-
     height:420px;
 
     left:-120px;
-
     bottom:-120px;
+
+    background:#6b5cff;
 
     border-radius:50%;
 
-    background:#6d5cff;
-
     filter:blur(170px);
 
-    opacity:.14;
+    opacity:.15;
+
+    z-index:-1;
+
+}
+
+/* Quote Icon */
+
+.testimonial-card::before{
+
+    content:"❝";
+
+    position:absolute;
+
+    top:20px;
+    right:25px;
+
+    font-size:70px;
+
+    color:rgba(79,140,255,.15);
+
+    font-family:serif;
+
+}
+
+/* Hover */
+
+.testimonial-card:hover::before{
+
+    color:rgba(79,140,255,.35);
+
+    transition:.4s;
 
 }
 
 /*=================================================
-            RESPONSIVE
+        RESPONSIVE
 ==================================================*/
 
-@media(max-width:1100px){
+@media(max-width:992px){
 
-.review-card{
+.testimonial-grid{
 
-    width:340px;
-
-}
-
-.review-left{
-
-    transform:
-        translateX(-220px)
-        scale(.82);
-
-}
-
-.review-right{
-
-    transform:
-        translateX(220px)
-        scale(.82);
+    grid-template-columns:repeat(2,1fr);
 
 }
 
@@ -3934,58 +3725,39 @@ background:rgba(79,140,255,.10);
 
 @media(max-width:768px){
 
-.reviews-v5{
+.testimonials{
 
     padding:90px 6%;
 
 }
 
-.reviews-track{
+.testimonial-grid{
 
-    height:420px;
+    grid-template-columns:1fr;
+
+    gap:25px;
 
 }
 
-.review-card{
-
-    width:100%;
-
-    max-width:340px;
+.testimonial-card{
 
     padding:30px;
 
 }
 
-.review-left,
-.review-right{
+.testimonial-card h3{
 
-    display:none;
-
-}
-
-.review-active{
-
-    transform:none;
+    font-size:20px;
 
 }
 
-.review-nav{
+.testimonial-card p{
 
-    width:52px;
-
-    height:52px;
-
-    font-size:24px;
+    font-size:16px;
 
 }
 
-.review-quote{
-
-    font-size:54px;
-
-}
-
-.review-client h3{
+.stars{
 
     font-size:20px;
 
