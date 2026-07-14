@@ -4183,100 +4183,54 @@ background:rgba(79,140,255,.10);
 
 }
 /*=================================================
-                PREMIUM FOOTER
+                FOOTER FINAL
 ==================================================*/
 
 .footer{
 
     position:relative;
-    overflow:hidden;
 
     padding:90px 8% 30px;
 
-    background:linear-gradient(
-        180deg,
-        rgba(10,15,30,.95),
-        rgba(5,8,18,1)
-    );
+    overflow:hidden;
+
+    background:rgba(255,255,255,.03);
 
     border-top:1px solid rgba(255,255,255,.08);
 
-}
-
-/*====================================*/
-
-.footer-glow{
-
-    position:absolute;
-
-    width:700px;
-    height:700px;
-
-    left:-250px;
-    top:-250px;
-
-    border-radius:50%;
-
-    background:radial-gradient(circle,
-    rgba(79,140,255,.18),
-    transparent 70%);
-
-    filter:blur(140px);
-
-    pointer-events:none;
+    backdrop-filter:blur(20px);
 
 }
 
-/*====================================*/
+.footer-wrapper{
 
-.footer-container{
-
-    max-width:1350px;
+    max-width:1300px;
 
     margin:auto;
 
     display:grid;
 
-    grid-template-columns:
+    grid-template-columns:2fr 1fr 1fr 1.2fr;
 
-    1.4fr
-    1fr
-    1fr
-    1fr;
-
-    gap:60px;
-
-    position:relative;
-
-    z-index:2;
+    gap:50px;
 
 }
 
-/*====================================*/
-
-.footer-about{
-
-    display:flex;
-
-    flex-direction:column;
-
-}
+/*==============================
+        LOGO
+===============================*/
 
 .footer-logo{
 
-    display:inline-flex;
-
-    align-items:center;
-
     font-size:34px;
 
-    font-weight:700;
+    font-weight:800;
 
     color:#fff;
 
     text-decoration:none;
 
-    margin-bottom:20px;
+    letter-spacing:1px;
 
 }
 
@@ -4284,121 +4238,108 @@ background:rgba(79,140,255,.10);
 
     color:#4f8cff;
 
-    font-size:40px;
-
 }
 
-.footer-about p{
+/*==============================
+        COMPANY TEXT
+===============================*/
 
-    color:#b7c5df;
+.footer-text{
+
+    color:#b8cfff;
+
+    margin:25px 0;
 
     line-height:1.9;
 
-    margin-bottom:30px;
-
-    max-width:360px;
+    max-width:330px;
 
 }
 
-/*====================================*/
+/*==============================
+        COLUMN
+===============================*/
 
-.footer-links h3,
-.footer-contact h3{
+.footer-column h3{
 
     color:#fff;
 
-    margin-bottom:22px;
-
     font-size:22px;
 
-}
-
-.footer-links{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:16px;
+    margin-bottom:25px;
 
 }
 
-.footer-links a{
+.footer-column ul{
 
-    color:#b7c5df;
+    list-style:none;
+
+}
+
+.footer-column ul li{
+
+    margin-bottom:16px;
+
+    color:#b8cfff;
+
+}
+
+.footer-column ul li a{
+
+    color:#b8cfff;
 
     text-decoration:none;
 
-    transition:.35s;
+    transition:.35s ease;
 
 }
 
-.footer-links a:hover{
+.footer-column ul li a:hover{
 
     color:#4f8cff;
 
-    transform:translateX(8px);
-
-}
-
-/*====================================*/
-
-.footer-contact p{
-
-    color:#b7c5df;
-
-    margin-bottom:18px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-}
-
-.footer-contact i{
-
-    color:#4f8cff;
-
-    font-size:20px;
+    padding-left:8px;
 
 }
 /*=================================================
-            FOOTER SOCIAL ICONS
+            FOOTER SOCIAL
 ==================================================*/
 
 .footer-social{
 
     display:flex;
-    gap:18px;
+
+    gap:15px;
+
+    margin-top:30px;
 
 }
 
 .footer-social a{
 
     width:52px;
+
     height:52px;
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
-    border-radius:50%;
-
-    text-decoration:none;
-
-    color:#fff;
-
-    font-size:22px;
+    border-radius:16px;
 
     background:rgba(255,255,255,.05);
 
     border:1px solid rgba(255,255,255,.08);
 
-    backdrop-filter:blur(15px);
+    color:#fff;
 
-    transition:.4s;
+    font-size:22px;
+
+    text-decoration:none;
+
+    transition:.35s ease;
 
 }
 
@@ -4406,56 +4347,29 @@ background:rgba(79,140,255,.10);
 
     background:#4f8cff;
 
-    transform:translateY(-8px) scale(1.08);
+    border-color:#4f8cff;
 
-    box-shadow:
-    0 15px 35px rgba(79,140,255,.35);
+    transform:translateY(-8px) rotate(8deg);
 
-}
-
-/*======================================
-        ANIMATED LOGO
-=======================================*/
-
-.footer-logo{
-
-    transition:.4s;
+    box-shadow:0 15px 35px rgba(79,140,255,.35);
 
 }
 
-.footer-logo:hover{
+/*=================================================
+            CONTACT ICONS
+==================================================*/
 
-    letter-spacing:2px;
+.footer-column li i{
 
-}
+    color:#4f8cff;
 
-.footer-logo span{
-
-    display:inline-block;
-
-    animation:logoFloat 3s ease-in-out infinite;
+    margin-right:10px;
 
 }
 
-@keyframes logoFloat{
-
-    0%,100%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-6px);
-
-    }
-
-}
-
-/*======================================
-        FOOTER BOTTOM
-=======================================*/
+/*=================================================
+            FOOTER BOTTOM
+==================================================*/
 
 .footer-bottom{
 
@@ -4467,27 +4381,37 @@ background:rgba(79,140,255,.10);
 
     display:flex;
 
-    justify-content:center;
+    justify-content:space-between;
 
     align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
 
 }
 
 .footer-bottom p{
 
-    color:#9fb2d8;
-
-    text-align:center;
+    color:#9fb8e8;
 
     font-size:15px;
 
 }
 
-/*======================================
-        SCROLL TOP BUTTON
-=======================================*/
+.footer-bottom span{
 
-#scrollTop{
+    color:#4f8cff;
+
+    font-weight:700;
+
+}
+
+/*=================================================
+            BACK TO TOP
+==================================================*/
+
+.back-to-top{
 
     position:fixed;
 
@@ -4499,70 +4423,101 @@ background:rgba(79,140,255,.10);
 
     height:58px;
 
-    border:none;
-
-    border-radius:50%;
-
-    background:linear-gradient(
-    135deg,
-    #4f8cff,
-    #2563eb);
-
-    color:#fff;
-
-    font-size:24px;
-
-    cursor:pointer;
-
     display:flex;
 
     justify-content:center;
 
     align-items:center;
 
-    opacity:0;
+    border-radius:50%;
 
-    visibility:hidden;
+    background:linear-gradient(135deg,#4f8cff,#2563eb);
 
-    transform:translateY(20px);
+    color:#fff;
 
-    transition:.4s;
+    text-decoration:none;
 
-    box-shadow:
+    font-size:24px;
 
-    0 20px 40px rgba(79,140,255,.35);
+    box-shadow:0 15px 35px rgba(79,140,255,.35);
+
+    transition:.35s ease;
 
     z-index:999;
 
 }
 
-#scrollTop.show{
+.back-to-top:hover{
 
-    opacity:1;
+    transform:translateY(-8px);
 
-    visibility:visible;
-
-    transform:translateY(0);
+    box-shadow:0 25px 45px rgba(79,140,255,.45);
 
 }
 
-#scrollTop:hover{
+/*=================================================
+            BACKGROUND GLOW
+==================================================*/
 
-    transform:translateY(-8px) scale(1.08);
+.footer::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+
+    height:450px;
+
+    top:-180px;
+
+    left:-180px;
+
+    background:#4f8cff;
+
+    border-radius:50%;
+
+    filter:blur(180px);
+
+    opacity:.12;
 
 }
 
-/*======================================
-        RESPONSIVE
-=======================================*/
+.footer::after{
 
-@media(max-width:1100px){
+    content:"";
 
-.footer-container{
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    bottom:-150px;
+
+    right:-150px;
+
+    background:#6b5cff;
+
+    border-radius:50%;
+
+    filter:blur(160px);
+
+    opacity:.10;
+
+}
+
+/*=================================================
+            RESPONSIVE
+==================================================*/
+
+@media(max-width:992px){
+
+.footer-wrapper{
 
     grid-template-columns:repeat(2,1fr);
 
-    gap:50px;
+    gap:40px;
 
 }
 
@@ -4572,66 +4527,33 @@ background:rgba(79,140,255,.10);
 
 .footer{
 
-    padding:80px 6% 30px;
+    padding:70px 6% 25px;
 
 }
 
-.footer-container{
+.footer-wrapper{
 
     grid-template-columns:1fr;
+
+    gap:35px;
+
+}
+
+.footer-bottom{
+
+    flex-direction:column;
 
     text-align:center;
 
 }
 
-.footer-about{
-
-    align-items:center;
-
-}
-
-.footer-about p{
-
-    max-width:100%;
-
-}
-
 .footer-social{
 
-    justify-content:center;
+    flex-wrap:wrap;
 
 }
 
-.footer-contact p{
-
-    justify-content:center;
-
-}
-
-}
-
-@media(max-width:480px){
-
-.footer-logo{
-
-    font-size:28px;
-
-}
-
-.footer-logo span{
-
-    font-size:34px;
-
-}
-
-.footer-links h3,
-.footer-contact h3{
-
-    font-size:20px;
-
-}
-
-#scrollTop{
+.back-to-top{
 
     width:50px;
 
@@ -4641,84 +4563,8 @@ background:rgba(79,140,255,.10);
 
     bottom:20px;
 
-}
+    font-size:20px;
 
 }
-/*=================================================
-                CUSTOM CURSOR
-==================================================*/
-
-.cursor-dot,
-.cursor-outline{
-
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    pointer-events:none;
-
-    transform:translate(-50%,-50%);
-
-    z-index:999999;
-
-}
-
-/*======================================
-        INNER DOT
-=======================================*/
-
-.cursor-dot{
-
-    width:8px;
-    height:8px;
-
-    border-radius:50%;
-
-    background:#4f8cff;
-
-    box-shadow:
-        0 0 12px rgba(79,140,255,.8),
-        0 0 25px rgba(79,140,255,.5);
-
-}
-
-/*======================================
-        OUTER RING
-=======================================*/
-
-.cursor-outline{
-
-    width:42px;
-    height:42px;
-
-    border-radius:50%;
-
-    border:2px solid rgba(79,140,255,.6);
-
-    background:rgba(79,140,255,.08);
-
-    backdrop-filter:blur(6px);
-
-    transition:
-        width .25s ease,
-        height .25s ease,
-        border-color .25s ease,
-        background .25s ease;
-
-}
-
-/*======================================
-        HOVER EFFECT
-=======================================*/
-
-.cursor-outline.hover{
-
-    width:60px;
-    height:60px;
-
-    border-color:#00d4ff;
-
-    background:rgba(0,212,255,.12);
 
 }
