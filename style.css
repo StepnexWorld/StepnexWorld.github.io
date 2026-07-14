@@ -3849,6 +3849,79 @@ background:rgba(79,140,255,.10);
 
 }
 /*=================================================
+        RESPONSIVE
+==================================================*/
+
+@media(max-width:1100px){
+
+.testimonial-slider{
+
+    flex-direction:column;
+
+}
+
+.testimonial-track{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.testimonial-card{
+
+    width:100%;
+
+    max-width:420px;
+
+    min-height:auto;
+
+}
+
+.testimonial-btn{
+
+    width:52px;
+
+    height:52px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.testimonials{
+
+    padding:90px 6%;
+
+}
+
+.testimonial-card{
+
+    padding:28px;
+
+}
+
+.client img{
+
+    width:60px;
+
+    height:60px;
+
+}
+
+.quote-icon{
+
+    font-size:48px;
+
+}
+
+}
+/*=================================================
               CONTACT SECTION
 ==================================================*/
 
