@@ -4568,3 +4568,30 @@ background:rgba(79,140,255,.10);
 }
 
 }
+/*=================================================
+            SCROLL PROGRESS BAR
+==================================================*/
+
+.scroll-progress{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:0%;
+
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        #4f8cff,
+        #67b2ff
+    );
+
+    z-index:99999;
+
+    box-shadow:0 0 15px rgba(79,140,255,.6);
+
+}
