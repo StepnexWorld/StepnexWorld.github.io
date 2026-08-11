@@ -4618,3 +4618,47 @@ background:rgba(79,140,255,.10);
 .nav-item{
     transition:.3s ease;
 }
+/* ==========================
+   SCROLL TO TOP
+========================== */
+
+.scroll-top{
+    position:fixed;
+    right:25px;
+    bottom:105px;
+
+    width:50px;
+    height:50px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(79,140,255,.9);
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:50%;
+
+    font-size:22px;
+    cursor:pointer;
+
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(20px);
+
+    transition:.35s ease;
+
+    z-index:998;
+}
+
+.scroll-top.show{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.scroll-top:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(79,140,255,.4);
+}
