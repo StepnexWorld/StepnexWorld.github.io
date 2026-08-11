@@ -1340,22 +1340,46 @@ AOS.init({
 <a href="https://wa.me/923328022642" class="whatsapp-float" target="_blank">
     <i class="fa-brands fa-whatsapp"></i>
 
- <script>
+<script>
 const menuToggle = document.querySelector('.menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
+const navItems = document.querySelectorAll('.nav-item');
 
 menuToggle.addEventListener('click', function () {
+
     navMenu.classList.toggle('active');
 
     const icon = menuToggle.querySelector('i');
 
     if (navMenu.classList.contains('active')) {
+
         icon.classList.remove('ri-menu-3-line');
         icon.classList.add('ri-close-line');
+
     } else {
+
         icon.classList.remove('ri-close-line');
         icon.classList.add('ri-menu-3-line');
+
     }
+
+});
+
+/* Close menu after clicking a navigation link */
+
+navItems.forEach(function(item){
+
+    item.addEventListener('click', function(){
+
+        navMenu.classList.remove('active');
+
+        const icon = menuToggle.querySelector('i');
+
+        icon.classList.remove('ri-close-line');
+        icon.classList.add('ri-menu-3-line');
+
+    });
+
 });
 </script>   
 </body>
