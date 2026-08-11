@@ -4600,3 +4600,21 @@ background:rgba(79,140,255,.10);
     }
 
 }
+/* ==========================
+   NAVBAR SCROLL EFFECT
+========================== */
+
+.navbar.scrolled{
+    background:rgba(5,8,22,.92);
+    backdrop-filter:blur(20px);
+    box-shadow:0 10px 35px rgba(0,0,0,.25);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-item.active{
+    color:#4f8cff;
+}
+
+.nav-item{
+    transition:.3s ease;
+}
