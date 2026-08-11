@@ -1148,18 +1148,24 @@ background:rgba(79,140,255,.10);
 
 .about-v3-container{
 
+    width:100%;
     max-width:1300px;
 
     margin:70px auto 0;
 
     display:grid;
 
-    grid-template-columns:430px 1fr;
+    grid-template-columns:430px minmax(0, 1fr);
 
     gap:90px;
 
     align-items:center;
 
+}
+
+.about-v3-content{
+    min-width:0;
+    width:100%;
 }
 
 /*==============================
