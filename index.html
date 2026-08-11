@@ -1428,6 +1428,30 @@ window.addEventListener('scroll', function () {
     });
 
 });
+    /* ==========================
+   SCROLL TO TOP
+========================== */
+
+const scrollTop = document.getElementById('scroll-top');
+
+window.addEventListener('scroll', function(){
+
+    if(window.scrollY > 500){
+        scrollTop.classList.add('show');
+    }else{
+        scrollTop.classList.remove('show');
+    }
+
+});
+
+scrollTop.addEventListener('click', function(){
+
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+
+});
 </script> 
     <!-- Scroll To Top -->
 
