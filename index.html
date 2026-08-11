@@ -1381,6 +1381,53 @@ navItems.forEach(function(item){
     });
 
 });
+    /* ==========================
+   NAVBAR SCROLL + ACTIVE MENU
+========================== */
+
+const navbar = document.querySelector('.navbar');
+const sections = document.querySelectorAll('section[id]');
+const menuItems = document.querySelectorAll('.nav-item');
+
+window.addEventListener('scroll', function () {
+
+    /* Navbar scroll effect */
+
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+
+    /* Active menu item */
+
+    let currentSection = '';
+
+    sections.forEach(function(section) {
+
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.offsetHeight;
+
+        if (
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+        ) {
+            currentSection = section.getAttribute('id');
+        }
+
+    });
+
+    menuItems.forEach(function(item) {
+
+        item.classList.remove('active');
+
+        if (item.getAttribute('href') === '#' + currentSection) {
+            item.classList.add('active');
+        }
+
+    });
+
+});
 </script>   
 </body>
 
